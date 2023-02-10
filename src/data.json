@@ -1,0 +1,254 @@
+[
+  {
+    "upperLeftX": 77.0040959625512,
+    "upperLeftY": 39.80825343893289,
+    "lowerRightX": 90.16968987712113,
+    "lowerRightY": 42.073086008058915,
+    "name": "Bowser",
+    "file": "bowser.png",
+    "difficulty": "Very Easy"
+  },
+  {
+    "upperLeftX": 67.5,
+    "upperLeftY": 58.34838709677419,
+    "lowerRightX": 70.21739130434783,
+    "lowerRightY": 58.86451612903226,
+    "name": "Plankton",
+    "file": "plankton.webp",
+    "difficulty": "Very Hard"
+  },
+  {
+    "upperLeftX": 42.83164782867341,
+    "upperLeftY": 78.4150303715214,
+    "lowerRightX": 45.508625817965495,
+    "lowerRightY": 79.10721853369121,
+    "name": "Johnny Bravo",
+    "file": "johnny.png",
+    "difficulty": "Easy"
+  },
+  {
+    "upperLeftX": 62.785254534815685,
+    "upperLeftY": 92.44129498402111,
+    "lowerRightX": 67.407840842598,
+    "lowerRightY": 93.3166597193275,
+    "name": "Spiderman",
+    "file": "spiderman.png",
+    "difficulty": "Medium"
+  },
+  {
+    "upperLeftX": 76.4774722059684,
+    "upperLeftY": 84.84090593302766,
+    "lowerRightX": 90.40374488004682,
+    "lowerRightY": 88.56467972766431,
+    "name": "Dr. Zoidberg",
+    "file": "zoidberg.webp",
+    "difficulty": "Very Easy"
+  },
+  {
+    "upperLeftX": 29.139847864248097,
+    "upperLeftY": 97.24885368903709,
+    "lowerRightX": 32.475131655939144,
+    "lowerRightY": 98.49937473947477,
+    "name": "Tommy Vercetti",
+    "file": "tommyvercetti.png",
+    "difficulty": "Hard"
+  },
+  {
+    "upperLeftX": 57.519016968987714,
+    "upperLeftY": 75.40641934139225,
+    "lowerRightX": 61.32241076653013,
+    "lowerRightY": 76.08725857996387,
+    "name": "Kenny",
+    "file": "kenny.png",
+    "difficulty": "Easy"
+  },
+  {
+    "upperLeftX": 1.2873025160912814,
+    "upperLeftY": 86.88342364874254,
+    "lowerRightX": 4.681100058513751,
+    "lowerRightY": 87.67542031401973,
+    "name": "Ash Ketchum",
+    "file": "ash.png",
+    "difficulty": "Hard"
+  },
+  {
+    "upperLeftX": 64.7162083089526,
+    "upperLeftY": 77.1432541336668,
+    "lowerRightX": 67.46635459332944,
+    "lowerRightY": 77.99082951229678,
+    "name": "Patrick",
+    "file": "patrick.png",
+    "difficulty": "Easy"
+  },
+  {
+    "upperLeftX": 84.54661558109834,
+    "upperLeftY": 94.49583017437453,
+    "lowerRightX": 88.76117496807151,
+    "lowerRightY": 95.51175132676269,
+    "name": "Tom",
+    "file": "tom.png",
+    "difficulty": "Medium"
+  },
+  {
+    "upperLeftX": 38.13206424747174,
+    "upperLeftY": 59.598813391722,
+    "lowerRightX": 44.6162998215348,
+    "lowerRightY": 60.68653764656025,
+    "name": "Neo",
+    "file": "neo.png",
+    "difficulty": "Medium"
+  },
+  {
+    "upperLeftX": 8.804283164782866,
+    "upperLeftY": 67.15637801949428,
+    "lowerRightX": 14.039262343842951,
+    "lowerRightY": 68.21584969628478,
+    "name": "Batman",
+    "file": "batman.png",
+    "difficulty": "Hard"
+  },
+  {
+    "upperLeftX": 20.34503271861987,
+    "upperLeftY": 95.14055657578754,
+    "lowerRightX": 25.520523497917907,
+    "lowerRightY": 96.1717756745303,
+    "name": "Link",
+    "file": "link.png",
+    "difficulty": "Easy"
+  },
+  {
+    "upperLeftX": 58.477096966091615,
+    "upperLeftY": 91.72199463201018,
+    "lowerRightX": 60.797144556811425,
+    "lowerRightY": 92.41418279417996,
+    "name": "The Hollow Knight",
+    "file": "hollowknight.webp",
+    "difficulty": "Hard"
+  },
+  {
+    "upperLeftX": 32.064247471743016,
+    "upperLeftY": 78.69755615199887,
+    "lowerRightX": 35.455086258179655,
+    "lowerRightY": 79.50275462635965,
+    "name": "Sonic",
+    "file": "sonic.png",
+    "difficulty": "Very Hard"
+  },
+  {
+    "upperLeftX": 93.51576442593694,
+    "upperLeftY": 76.80463342279982,
+    "lowerRightX": 95.18143961927424,
+    "lowerRightY": 77.34143240570702,
+    "name": "Stewie",
+    "file": "stewie.png",
+    "difficulty": "Easy"
+  },
+  {
+    "upperLeftX": 13.38488994646044,
+    "upperLeftY": 71.43664359372794,
+    "lowerRightX": 15.348007138607972,
+    "lowerRightY": 71.98756886565899,
+    "name": "Brian",
+    "file": "brian.webp",
+    "difficulty": "Easy"
+  },
+  {
+    "upperLeftX": 60.202260559190954,
+    "upperLeftY": 68.44187032066677,
+    "lowerRightX": 65.97263533610946,
+    "lowerRightY": 69.67085746574375,
+    "name": "Jabba The Hutt",
+    "file": "jabba.webp",
+    "difficulty": "Very Easy"
+  },
+  {
+    "upperLeftX": 51.576442593694225,
+    "upperLeftY": 72.82101991806752,
+    "lowerRightX": 55.85960737656157,
+    "lowerRightY": 74.17714366435936,
+    "name": "Vincent Vega (Pulp Fiction)",
+    "file": "vincent.png",
+    "difficulty": "Hard"
+  },
+  {
+    "upperLeftX": 4.521118381915526,
+    "upperLeftY": 75.44850967650798,
+    "lowerRightX": 8.923259964306961,
+    "lowerRightY": 76.11244526063004,
+    "name": "Aang (Airbender)",
+    "file": "aang.webp",
+    "difficulty": "Hard"
+  },
+  {
+    "upperLeftX": 96.54967281380131,
+    "upperLeftY": 77.49682158496964,
+    "lowerRightX": 98.51279000594883,
+    "lowerRightY": 78.33027263737816,
+    "name": "Phineas",
+    "file": "phineas.png",
+    "difficulty": "Medium"
+  },
+  {
+    "upperLeftX": 92.20701963117193,
+    "upperLeftY": 92.83797146489617,
+    "lowerRightX": 95.65734681737061,
+    "lowerRightY": 94.29297923435513,
+    "name": "Chris Griffin",
+    "file": "Chris.png",
+    "difficulty": "Easy"
+  },
+  {
+    "upperLeftX": 61.21356335514575,
+    "upperLeftY": 72.36897866930357,
+    "lowerRightX": 64.24747174301011,
+    "lowerRightY": 73.5273343692612,
+    "name": "Roger",
+    "file": "roger.png",
+    "difficulty": "Easy"
+  },
+  {
+    "upperLeftX": 45.80606781677573,
+    "upperLeftY": 78.69755615199887,
+    "lowerRightX": 48.066627007733494,
+    "lowerRightY": 79.72877525074163,
+    "name": "Fry",
+    "file": "fry.png",
+    "difficulty": "Medium"
+  },
+  {
+    "upperLeftX": 31.70731707317073,
+    "upperLeftY": 76.8752648679192,
+    "lowerRightX": 35.455086258179655,
+    "lowerRightY": 77.75109478739935,
+    "name": "Lois Griffin",
+    "file": "lois.png",
+    "difficulty": "Medium"
+  },
+  {
+    "upperLeftX": 1.9631171921475312,
+    "upperLeftY": 79.5310072044074,
+    "lowerRightX": 6.305770374776919,
+    "lowerRightY": 80.47746856900693,
+    "name": "Kang",
+    "file": "kang.webp",
+    "difficulty": "Hard"
+  },
+  {
+    "upperLeftX": 17.965496728138014,
+    "upperLeftY": 82.53990676649245,
+    "lowerRightX": 21.653777513384888,
+    "lowerRightY": 83.5711258652352,
+    "name": "Bender",
+    "file": "bender.png",
+    "difficulty": "Easy"
+  },
+  {
+    "upperLeftX": 80.30933967876264,
+    "upperLeftY": 82.90719028111315,
+    "lowerRightX": 83.93813206424747,
+    "lowerRightY": 83.8395253566888,
+    "name": "Waldo",
+    "file": "waldo.png",
+    "difficulty": "Easy"
+  }
+]

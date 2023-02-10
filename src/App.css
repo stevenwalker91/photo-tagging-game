@@ -1,5 +1,6 @@
 body {
-  margin: 0
+  margin: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 .game-image {
@@ -12,11 +13,67 @@ body {
 }
 
 .square {
-  background-color: rgb(255 255 255 / 46%);
-  border: 3px dashed black;
+  background-color: #116f0975;
+  border: 2px dashed black;
   border-radius: 10px;
   position: absolute;
   padding: 3%;
   height: 1px;
   width: 1px;
+}
+
+.carousel-container {
+  background-color: #202127;
+  padding-left: 50px;
+  height: 100px;
+  position: sticky !important;
+  top: 0px;
+  z-index: 1;
+}
+
+
+.option-image {
+  max-height: 80px;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.character-container {
+  display: flex;
+  justify-content: center;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.difficulty {
+  position: absolute;
+  top: 80%;
+  border-radius: 5px;
+  background-color: #800101ba;
+  padding: 0px 10px;
+  color: white;
+}
+
+.found {
+  opacity: 0.3;
+}
+
+.check-circle {
+  position: absolute;
+  color: #05ff05;
+  top: 30%;
+}
+
+.credit {
+  position: absolute;
+  top: 10p;
+  padding: 10px;
+  background-color: #ffffff80;
+  border-radius: 3px;
 }

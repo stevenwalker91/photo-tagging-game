@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
-const Image = ({admin}) => {
+
+const Image = ({admin, checkClickSuccess, characters}) => {
 
   const [clickedPositions, setClickedPositions] = useState([])
   const [areas, setAreas] = useState([])
-
 
   const handleClick = (event) => {
     const imageWidth = event.target.offsetWidth;
@@ -15,27 +16,36 @@ const Image = ({admin}) => {
     const x = (xClickWithinImage / imageWidth) * 100;
     const y = (yClickWithinImage/ imageHeight) * 100;
 
-    setClickedPositions([
-      ...clickedPositions,
-      {x: x, y: y }
-    ])
+    const success = checkClickSuccess(x, y)
+
+    if (!success) {
+      setClickedPositions([
+        ...clickedPositions,
+        {x: x, y: y }
+      ])
+    } 
 }
 
 // admin utility function to select char coords
 const handleDrag = (event) => {
   event.preventDefault();
+  const imageWidth = event.target.offsetWidth;
+  const xClickWithinImage = event.nativeEvent.offsetX;
+  const imageHeight = event.target.offsetHeight
+  const yClickWithinImage = event.nativeEvent.offsetY
   let area;
+
   if (event.type === 'mousedown') {
     area = {}
-    area.upperLeftX = (event.pageX / event.target.offsetWidth) * 100;
-    area.upperLeftY = (event.pageY / event.target.offsetHeight) * 100;
+    area.upperLeftX = (xClickWithinImage / imageWidth) * 100;
+    area.upperLeftY = (yClickWithinImage/ imageHeight) * 100;
   }
 
   if (event.type === 'mouseup') {
     const lastArea = areas.length - 1;
     area = areas[lastArea];
-    area.lowerRightX = (event.pageX / event.target.offsetWidth) * 100;
-    area.lowerRightY = (event.pageY / event.target.offsetHeight) * 100;
+    area.lowerRightX = (xClickWithinImage / imageWidth) * 100;
+    area.lowerRightY = (yClickWithinImage/ imageHeight) * 100;
     console.log(area);
   }
 
@@ -43,39 +53,61 @@ const handleDrag = (event) => {
 }
 
   return (
-    <>
-      <div className="image-container">
 
-        { admin ?
-        <img 
-          className="game-image" 
-          src="./assets/background-img.jpg" 
-          alt="a huge panorama containing lots of different characters"
-          onMouseDown={(event) => handleDrag(event)}
-          onMouseUp={(event) => handleDrag(event)}
-        />
-        :
-        <img 
-          className="game-image" 
-          src="./assets/background-img.jpg" 
-          alt="a huge panorama containing lots of different characters"
-          onClick={(event) => handleClick(event)}
-        />
+    <div className="image-container">
+      { admin ?
+      <img 
+        className="game-image" 
+        src="./assets/background-img.jpg" 
+        alt="a huge panorama containing lots of different characters"
+        onMouseDown={(event) => handleDrag(event)}
+        onMouseUp={(event) => handleDrag(event)}
+      />
+      :
+      <>
+      <span className='credit'>Big thanks to <a href="https://www.instagram.com/chekavo/?hl=en" target="_blank" rel="noreferrer">Egor Klyuchnyk</a> for letting me use his awesome art work.</span>
+      <img 
+        className="game-image" 
+        src="./assets/background-img.jpg" 
+        alt="a huge panorama containing lots of different characters"
+        onClick={(event) => handleClick(event)}
+      />
+      </>
+      }
+      {clickedPositions.map((position) => {
+        const leftVal = `calc(${position.x}% )`;
+        const topVal = `calc(${position.y}% )`;
+        return (
+        <div 
+          className="square"
+          style={{left: leftVal, top: topVal, transform: "translateX(-50%) translateY(-50%)", backgroundColor: '#e9080830' }}
+          key={uuidv4()}
+        >
+
+        </div>
+        )
+      })}
+      {characters.map((char) => {
+        if (char.isFound) {
+          const leftVal = `calc(${char.upperLeftX}%)`;
+          const topVal = `calc(${char.upperLeftY}%)`;
+          const width = `${char.lowerRightX - char.upperLeftX}%`
+          const height = `${char.lowerRightY - char.upperLeftY}%`
+          return (
+          <div 
+            className="square" 
+            style={{left: leftVal, top: topVal, width: width, height: height, padding: "0px" }}
+            key={uuidv4()}
+          >
+          </div>
+          )
+        } else {
+          return '';
         }
-        {clickedPositions.map((position) => {
-          const leftVal = `calc(${position.x}% )`;
-          const topVal = `calc(${position.y}% )`;
-          return <div className="square" style={{left: leftVal, top: topVal, transform: "translateX(-50%) translateY(-50%)" }}></div>
-        })}
-        {areas.map((area) => {
-          const leftVal = `calc(${area.upperLeftX}%)`;
-          const topVal = `calc(${area.upperLeftY}%)`;
-          const width = `${area.lowerRightX - area.upperLeftX}%`
-          const height = `${area.lowerRightY - area.upperLeftY}%`
-          return <div className="square" style={{left: leftVal, top: topVal, width: width, height: height, padding: "0px" }}></div>
-        })}
-      </div>
-    </>
+
+      })}
+    </div>
+
 
   )
 }
