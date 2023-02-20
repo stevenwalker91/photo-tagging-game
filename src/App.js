@@ -6,9 +6,9 @@ import Data from './data.json';
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Modal from './components/Modal'
 
 function App() {
-
   const sortCharactersByDifficulty = (chars) => {
     const sortOrder = ['Very Easy', 'Easy', 'Medium', 'Hard', 'Very Hard'];
 
@@ -17,10 +17,10 @@ function App() {
     })
   }
 
-
-
   const [characters, setCharacters] = useState(sortCharactersByDifficulty(Data));
-  const [ score, setScore ] = useState({score: 0, wrongClicks: 0});
+  const [score, setScore] = useState({score: 0, wrongClicks: 0});
+  const [modalType, setModalType] = useState('endGame');
+  const [isModalOpen, setIsModalOpen] = useState(true);
 
   const handlePlayerMove = (successful, character) => {
     const newScore = score;
@@ -67,8 +67,21 @@ function App() {
     return successfulClick
   }
 
+  const newGame = () => {
+    setIsModalOpen(false);
+    setCharacters(sortCharactersByDifficulty(Data));
+    setScore({score: 0, wrongClicks: 0});
+  }
+
+
   return (
     <div className="App">
+      <Modal 
+        modalType={modalType}
+        isOpen={isModalOpen}
+        newGame={newGame}
+        scores={score}
+      />
       <ToastContainer
         position="top-right"
         autoClose={1000}

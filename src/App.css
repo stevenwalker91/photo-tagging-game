@@ -10,6 +10,7 @@ body {
 
 .image-container {
   position: relative;
+  z-index: 0;
 }
 
 .square {
@@ -30,7 +31,6 @@ body {
   top: 0px;
   z-index: 1;
 }
-
 
 .option-image {
   max-height: 80px;

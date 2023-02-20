@@ -7,6 +7,7 @@ const Image = ({admin, checkClickSuccess, characters}) => {
   const [areas, setAreas] = useState([])
 
   const handleClick = (event) => {
+    console.log(`click`)
     const imageWidth = event.target.offsetWidth;
     const xClickWithinImage = event.nativeEvent.offsetX;
     const imageHeight = event.target.offsetHeight
