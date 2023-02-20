@@ -9,7 +9,17 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
-  const [characters, setCharacters] = useState(Data);
+  const sortCharactersByDifficulty = (chars) => {
+    const sortOrder = ['Very Easy', 'Easy', 'Medium', 'Hard', 'Very Hard'];
+
+    return chars.sort((a, b) => {
+      return sortOrder.indexOf(a.difficulty) - sortOrder.indexOf(b.difficulty);
+    })
+  }
+
+
+
+  const [characters, setCharacters] = useState(sortCharactersByDifficulty(Data));
   const [ score, setScore ] = useState({score: 0, wrongClicks: 0});
 
   const handlePlayerMove = (successful, character) => {

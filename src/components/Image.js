@@ -4,7 +4,6 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 
 const Image = ({admin, checkClickSuccess, characters}) => {
-
   const [areas, setAreas] = useState([])
 
   const handleClick = (event) => {
@@ -48,6 +47,7 @@ const handleDrag = (event) => {
   return (
 
     <div className="image-container">
+      <span className='credit'>Big thanks to <a href="https://www.instagram.com/chekavo/?hl=en" target="_blank" rel="noreferrer">Egor Klyuchnyk</a> for letting me use his awesome art work.</span>
       { admin ?
       <img 
         className="game-image" 
@@ -58,7 +58,6 @@ const handleDrag = (event) => {
       />
       :
       <>
-      <span className='credit'>Big thanks to <a href="https://www.instagram.com/chekavo/?hl=en" target="_blank" rel="noreferrer">Egor Klyuchnyk</a> for letting me use his awesome art work.</span>
       <img 
         className="game-image" 
         src={`${process.env.PUBLIC_URL}/assets/background-img.jpg` }
