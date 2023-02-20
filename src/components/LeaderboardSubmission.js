@@ -24,6 +24,7 @@ const LeaderBoardSubmission = ({score, highscoreSubmitted}) => {
     event.preventDefault();
     addHighScore();
     highscoreSubmitted();
+
   }
 
 

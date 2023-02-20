@@ -24,7 +24,7 @@ const Mod = ({modalType, isOpen, newGame, scores}) => {
 
   useEffect(() => {
     getHighScores()
-  }, [highScores])
+  }, [highscoreSubmitted])
 
   const markHighScoreSubmitted = () => {
     setHighScoreSubmitted(true);
@@ -89,7 +89,7 @@ const Mod = ({modalType, isOpen, newGame, scores}) => {
                   }
                 </tbody>
               </table>
-              {highScore && !highscoreSubmitted && <LeaderboardSubmission score={scores} highscoreSubmitted={markHighScoreSubmitted} />}
+              {highScore && !highscoreSubmitted && <LeaderboardSubmission score={scores} highscoreSubmitted={markHighScoreSubmitted} updateHighScores={getHighScores}/>}
             </div>
             <div><button onClick={newGame}>New Game</button></div>
            
