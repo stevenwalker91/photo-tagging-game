@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 
 const Image = ({admin, checkClickSuccess, characters}) => {
@@ -78,6 +79,7 @@ const handleDrag = (event) => {
             style={{left: leftVal, top: topVal, width: width, height: height, padding: "0px" }}
             key={uuidv4()}
           >
+            <span style={{top: 'auto'}} className="check-circle"><CheckCircleIcon /></span>
           </div>
           )
         } else {

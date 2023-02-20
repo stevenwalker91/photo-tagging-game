@@ -13,13 +13,13 @@ body {
 }
 
 .square {
-  background-color: #116f0975;
-  border: 2px dashed black;
-  border-radius: 10px;
   position: absolute;
   padding: 3%;
   height: 1px;
   width: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel-container {
@@ -72,7 +72,6 @@ body {
 
 .credit {
   position: absolute;
-  top: 10p;
   padding: 10px;
   background-color: #ffffff80;
   border-radius: 3px;
