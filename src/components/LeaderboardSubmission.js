@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {db} from '../firebase_setup/firebase'
-import {collection, addDoc} from 'firebase/firestore'
+import {collection, addDoc } from 'firebase/firestore'
 
 const LeaderBoardSubmission = ({score}) => {
   const [userName, setUserName] = useState('')
@@ -9,9 +9,7 @@ const LeaderBoardSubmission = ({score}) => {
     setUserName(event.target.value)
   }
 
-  const handleSubmission = async (event) => {
-    event.preventDefault();
-
+  const addHighScore = async () => {
     try {
       await addDoc(collection(db, 'leaderboard'), {
         name: userName,
@@ -20,6 +18,12 @@ const LeaderBoardSubmission = ({score}) => {
     } catch (err) {
       console.log(err);
     }
+  }
+
+  const handleSubmission = async (event) => {
+    event.preventDefault();
+    addHighScore();
+
   }
 
 
