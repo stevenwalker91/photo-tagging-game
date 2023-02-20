@@ -1,3 +1,4 @@
+import LeaderboardSubmission from './LeaderboardSubmission';
 import Modal from 'react-modal';
 Modal.setAppElement('#root');
 
@@ -26,6 +27,7 @@ const Mod = ({modalType, isOpen, newGame, scores}) => {
     if (modalType === 'endGame') {
       const html = (
       <div>
+        <LeaderboardSubmission score={scores}/>
         <button onClick={() => newGame()}>New Game</button>
 
       </div>
