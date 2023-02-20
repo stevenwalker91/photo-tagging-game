@@ -26,6 +26,27 @@ function App() {
     setScore(newScore);
   }
 
+  const handlePlayerMove = (successful, character) => {
+    if (successful) {
+      updateScore('success');
+      toast.success(`Excellent, you found ${character.name}!`)
+      setCharacters(characters.map(char => {
+        if (char.name === character.name) {
+          return {...char, isFound: true}
+        } else {
+          return char
+        }
+      }))
+      return
+    }
+
+     // otherwise
+      updateScore('miss');
+      toast.error('Sorry, no characters there')
+
+  
+  }
+
   const checkClickSuccess = (x, y) => {
     const matchingCharacters = characters.filter((char) => {
       if (
@@ -40,22 +61,12 @@ function App() {
 
     const successfulClick = matchingCharacters.length === 1;
     if (successfulClick) {
-      updateScore('success');
-      toast.success(`Excellent, you found ${matchingCharacters[0].name}!`)
-      setCharacters(characters.map(char => {
-        if (char.name === matchingCharacters[0].name) {
-          return {...char, isFound: true}
-          
-        } else {
-          return char
-        }
-      }))
-      return true;
+      handlePlayerMove(successfulClick, matchingCharacters[0])
     } else {
-      updateScore('miss');
-      toast.error('Sorry, no characters there')
-      return false;
+      handlePlayerMove(successfulClick)
     }
+
+    return successfulClick
   }
 
   return (
