@@ -45,7 +45,7 @@ const Character = ({character}) => {
       <img 
         className={className('img')} 
         alt={character.name} 
-        src={`./assets/${character.file}`} 
+        src={`${process.env.PUBLIC_URL}/assets/${character.file}`} 
         title={character.name}
         draggable={false}
       />

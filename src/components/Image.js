@@ -58,7 +58,7 @@ const handleDrag = (event) => {
       { admin ?
       <img 
         className="game-image" 
-        src="./assets/background-img.jpg" 
+        src={`${process.env.PUBLIC_URL}/assets/background-img.jpg` }
         alt="a huge panorama containing lots of different characters"
         onMouseDown={(event) => handleDrag(event)}
         onMouseUp={(event) => handleDrag(event)}
@@ -68,7 +68,7 @@ const handleDrag = (event) => {
       <span className='credit'>Big thanks to <a href="https://www.instagram.com/chekavo/?hl=en" target="_blank" rel="noreferrer">Egor Klyuchnyk</a> for letting me use his awesome art work.</span>
       <img 
         className="game-image" 
-        src="./assets/background-img.jpg" 
+        src={`${process.env.PUBLIC_URL}/assets/background-img.jpg` }
         alt="a huge panorama containing lots of different characters"
         onClick={(event) => handleClick(event)}
       />
