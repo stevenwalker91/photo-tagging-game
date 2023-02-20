@@ -2,7 +2,7 @@ import { useState } from 'react';
 import {db} from '../firebase_setup/firebase'
 import {collection, addDoc } from 'firebase/firestore'
 
-const LeaderBoardSubmission = ({score}) => {
+const LeaderBoardSubmission = ({score, highscoreSubmitted}) => {
   const [userName, setUserName] = useState('')
 
   const handleInput = (event) => {
@@ -23,15 +23,15 @@ const LeaderBoardSubmission = ({score}) => {
   const handleSubmission = async (event) => {
     event.preventDefault();
     addHighScore();
-
+    highscoreSubmitted();
   }
 
 
   return (
-    <form>
+    <form onSubmit={(event) => handleSubmission(event)}>
       <label htmlFor="nameInput">Name:</label>
-      <input id="nameInput" name="nameInput" onChange={(event) => handleInput(event)}/>
-      <button onClick={(event) => handleSubmission(event)}>Submit</button>
+      <input id="nameInput" name="nameInput" onChange={(event) => handleInput(event)} required />
+      <button>Submit</button>
     </form>
   )
 }

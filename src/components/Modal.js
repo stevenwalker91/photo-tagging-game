@@ -8,10 +8,11 @@ Modal.setAppElement('#root');
 const Mod = ({modalType, isOpen, newGame, scores}) => {
 
   const [highScores, setHighscores] = useState([]);
+  const [highscoreSubmitted, setHighScoreSubmitted] = useState(false);
 
   const getHighScores = async () => {
     const leaderboard = collection(db, 'leaderboard')
-    const q = query(leaderboard, orderBy('score', 'desc'), limit(100));
+    const q = query(leaderboard, orderBy('score', 'desc'), limit(10));
     const queryResults = await getDocs(q);
     let results = [];
 
@@ -23,64 +24,86 @@ const Mod = ({modalType, isOpen, newGame, scores}) => {
 
   useEffect(() => {
     getHighScores()
-  }, [isOpen])
+  }, [highScores])
 
-
+  const markHighScoreSubmitted = () => {
+    setHighScoreSubmitted(true);
+  }
 
   const styles = {
     overlay: {
       zIndex: 2,
       backgroundColor: 'rgb(9 2 2 / 68%)'
-      
     },
     content: {
       height: '60%',
       marginTop: 'auto',
-      marginBottom: 'auto'
-      
+      marginBottom: 'auto',
+      display: 'flex'
     }
   }
 
   const modalContent = (modalType) => {
+
+    let returnElements
 
     if (modalType === 'newGame') {
 
     }
 
     if (modalType === 'endGame') {
+      let highScore = false;
+      if (highScores[highScores.length-1].score < scores.score || highScores.length < 10) {
+        highScore = true;
+      }
 
-      const table = highScores.map((score, arr) => {
-        return (
-        <tr>
-          <td>{arr +1}</td>
-          <td>{score.name}</td>
-          <td>{score.score}</td>
-        </tr>
-        )
-      })
-      const html = (
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th>Position</th>
-              <th>Name</th>
-              <th>Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            {table}
-          </tbody>
-        </table>
-        
-        <LeaderboardSubmission score={scores}/>
-        <button onClick={() => newGame()}>New Game</button>
+      returnElements = (
+        <>
+          <div className="result-message">
+              <p>
+                Your score was <b>{scores.score - scores.wrongClicks}</b>. This is made up of the characters you found ({scores.score}) minus the clicks you made that were incorrect ({scores.wrongClicks}).
+              </p>
+              {highScore && <p>Awesome, it looks like you got a high score! Why not add your score to the leaderboard below?</p>}
+            </div>
+            <div className="leader-board-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Position</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {
+                    highScores.map((score, arr) => {
+                      return (
+                      <tr>
+                        <td>{arr +1}</td>
+                        <td>{score.name}</td>
+                        <td>{score.score}</td>
+                      </tr>
+                      )
+                    })
 
-      </div>
+                  }
+                </tbody>
+              </table>
+              {highScore && !highscoreSubmitted && <LeaderboardSubmission score={scores} highscoreSubmitted={markHighScoreSubmitted} />}
+            </div>
+            <div><button onClick={newGame}>New Game</button></div>
+           
+            
+          </>
+      
       )
-      return html
+      
     }
-
+  return (
+    <div className="modal-container">
+      {returnElements}
+    </div>
+    )
   }
 
   return (
@@ -91,7 +114,7 @@ const Mod = ({modalType, isOpen, newGame, scores}) => {
       shouldCloseOnOverlayClick={false}
       style={styles}
     >
-      { highScores && modalContent('endGame')}
+      { highScores.length > 0 && modalContent('endGame')}
     </Modal>
   )
 
