@@ -12,23 +12,10 @@ function App() {
   const [characters, setCharacters] = useState(Data);
   const [ score, setScore ] = useState({score: 0, wrongClicks: 0});
 
-
-  const updateScore = (result) => {
-    const newScore = score;
-
-    if (result === 'success') {
-      newScore.score = score.score + 1;
-    }
-
-    if (result === 'miss') {
-      newScore.wrongClicks = score.wrongClicks + 1;
-    }
-    setScore(newScore);
-  }
-
   const handlePlayerMove = (successful, character) => {
+    const newScore = score;
     if (successful) {
-      updateScore('success');
+      newScore.score = score.score + 1;
       toast.success(`Excellent, you found ${character.name}!`)
       setCharacters(characters.map(char => {
         if (char.name === character.name) {
@@ -37,14 +24,14 @@ function App() {
           return char
         }
       }))
-      return
+    }
+    
+    if (!successful) {
+      newScore.wrongClicks = score.wrongClicks + 1;
+      toast.error('Sorry, no characters there')
     }
 
-     // otherwise
-      updateScore('miss');
-      toast.error('Sorry, no characters there')
-
-  
+    setScore(newScore); 
   }
 
   const checkClickSuccess = (x, y) => {
