@@ -25,7 +25,7 @@ function App() {
         }
       }))
     }
-    
+
     if (!successful) {
       newScore.wrongClicks = score.wrongClicks + 1;
       toast.error('Sorry, no characters there')
@@ -44,6 +44,7 @@ function App() {
       ) {
         return char
       }
+      return null
     })
 
     const successfulClick = matchingCharacters.length === 1;
