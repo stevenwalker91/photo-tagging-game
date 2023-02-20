@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 const Image = ({admin, checkClickSuccess, characters}) => {
 
-  const [clickedPositions, setClickedPositions] = useState([])
   const [areas, setAreas] = useState([])
 
   const handleClick = (event) => {
@@ -16,14 +15,7 @@ const Image = ({admin, checkClickSuccess, characters}) => {
     const x = (xClickWithinImage / imageWidth) * 100;
     const y = (yClickWithinImage/ imageHeight) * 100;
 
-    const success = checkClickSuccess(x, y)
-
-    if (!success) {
-      setClickedPositions([
-        ...clickedPositions,
-        {x: x, y: y }
-      ])
-    } 
+    checkClickSuccess(x, y);
 }
 
 // admin utility function to select char coords
@@ -74,19 +66,6 @@ const handleDrag = (event) => {
       />
       </>
       }
-      {clickedPositions.map((position) => {
-        const leftVal = `calc(${position.x}% )`;
-        const topVal = `calc(${position.y}% )`;
-        return (
-        <div 
-          className="square"
-          style={{left: leftVal, top: topVal, transform: "translateX(-50%) translateY(-50%)", backgroundColor: '#e9080830' }}
-          key={uuidv4()}
-        >
-
-        </div>
-        )
-      })}
       {characters.map((char) => {
         if (char.isFound) {
           const leftVal = `calc(${char.upperLeftX}%)`;
