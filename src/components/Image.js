@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import IconButton from '@mui/material/IconButton';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import StopCircleIcon from '@mui/icons-material/StopCircle';
 
 
 const Image = ({admin, checkClickSuccess, characters, endGame}) => {
@@ -66,7 +68,13 @@ const handleDrag = (event) => {
       />
       </>
       }
-      <span className="endGameBtn"><button onClick={() => endGame()}>End Game</button></span>
+      <span 
+        className="endGameBtn"
+      >
+        <IconButton size="large">
+          <StopCircleIcon sx={{color: 'red', fontSize: "80px"}} onClick={() => endGame()}/>
+        </IconButton>
+      </span>
       {characters.map((char) => {
         if (char.isFound) {
           const leftVal = `calc(${char.upperLeftX}%)`;

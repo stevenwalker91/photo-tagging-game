@@ -114,3 +114,13 @@ table {
   left: 80%;
   bottom: 7%;
 }
+
+.endGameBtn>button {
+  background-color: none;
+  border: none;
+}
+
+.endGameBtn>button:hover {
+  background-color: white;
+  border: none;
+}
