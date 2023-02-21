@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import {db} from '../firebase_setup/firebase'
 import {collection, query, orderBy, limit, getDocs} from 'firebase/firestore'
 import Modal from 'react-modal';
+import { v4 as uuidv4 } from 'uuid';
 Modal.setAppElement('#root');
 
 const Mod = ({modalType, isOpen, newGame, scores, highscoreSubmitted, handleHighScoreSubmitted}) => {
@@ -77,7 +78,7 @@ const Mod = ({modalType, isOpen, newGame, scores, highscoreSubmitted, handleHigh
                   {
                     highScores.map((score, arr) => {
                       return (
-                      <tr>
+                      <tr key={uuidv4()}>
                         <td>{arr +1}</td>
                         <td>{score.name}</td>
                         <td>{score.score}</td>

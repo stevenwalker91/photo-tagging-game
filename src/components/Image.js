@@ -71,8 +71,8 @@ const handleDrag = (event) => {
       <span 
         className="endGameBtn"
       >
-        <IconButton size="large">
-          <StopCircleIcon sx={{color: 'red', fontSize: "80px"}} onClick={() => endGame()}/>
+        <IconButton size="large" onClick={() => endGame()}>
+          <StopCircleIcon sx={{color: 'red', fontSize: "80px"}}/>
         </IconButton>
       </span>
       {characters.map((char) => {
