@@ -44,7 +44,7 @@ const EndGame = ({newGame, scores, highscoreSubmitted, handleHighScoreSubmitted}
         </h3>
         {highScore && <p>Awesome, it looks like you got a high score! Why not add your score to the leaderboard below?</p>}
         </div>
-        <h4 style={{textAlign: 'center'}}>Leaderboard</h4>
+        <h4>Leaderboard</h4>
         <div className="leader-board-container">
           
           <table>
