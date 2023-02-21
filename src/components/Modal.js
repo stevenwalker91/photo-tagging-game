@@ -35,7 +35,10 @@ const Mod = ({modalType, isOpen, newGame, scores, highscoreSubmitted, handleHigh
       height: '60%',
       marginTop: 'auto',
       marginBottom: 'auto',
-      display: 'flex'
+      display: 'flex',
+      backgroundColor: '#202124',
+      borderColor: 'black',
+      color: 'white'
     }
   }
 
