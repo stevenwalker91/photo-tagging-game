@@ -4,7 +4,7 @@ import Character from "../Character";
 import { v4 as uuidv4 } from 'uuid';
 
 
-const Car = ({characters}) => {
+const Car = ({characters, gameMode}) => {
 
   const responsive = {
     desktop: {
@@ -24,6 +24,17 @@ const Car = ({characters}) => {
     }
   };
 
+  const charactersToDisplay = () => {
+    if (gameMode === 'default') {
+      return characters.map((char) => <Character character={char} key={uuidv4()} />);
+    }
+
+    if (gameMode === 'single') {
+      const nextCharacter = characters.find(char => char.isFound === false);
+      return <Character character={nextCharacter} />
+    }
+  }
+
   return (
     <Carousel
       swipeable={true}
@@ -36,7 +47,7 @@ const Car = ({characters}) => {
       partialVisible={false}
    
     >
-      {characters.map((char) => <Character character={char} key={uuidv4()} />)}
+      { charactersToDisplay() }
 
     </Carousel>
 )

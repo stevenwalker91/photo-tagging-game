@@ -19,9 +19,10 @@ function App() {
 
   const [characters, setCharacters] = useState(sortCharactersByDifficulty(Data));
   const [score, setScore] = useState({score: 0, wrongClicks: 0});
-  const [modalType, setModalType] = useState('endGame');
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalType, setModalType] = useState('startGame');
+  const [isModalOpen, setIsModalOpen] = useState(true);
   const [highscoreSubmitted, setHighScoreSubmitted] = useState(false);
+  const [gameMode, setGameMode] = useState('default');
 
   const handlePlayerMove = (successful, character) => {
     const newScore = score;
@@ -63,18 +64,36 @@ function App() {
   }, [characters])
 
   const checkClickSuccess = (x, y) => {
-    const matchingCharacters = characters.filter((char) => {
-      if (
-        x >= char.upperLeftX &&
-        x <= char.lowerRightX &&
-        y >= char.upperLeftY &&
-        y <= char.lowerRightY
-      ) {
-        return char
-      }
-      return null
-    })
+    let matchingCharacters = [];
 
+    if (gameMode === 'default') {
+      matchingCharacters = characters.filter((char) => {
+        if (
+          x >= char.upperLeftX &&
+          x <= char.lowerRightX &&
+          y >= char.upperLeftY &&
+          y <= char.lowerRightY
+        ) {
+          return char
+        }
+        return null
+      })
+    }
+
+    if (gameMode === 'single') {
+      const currentCharacter = characters.find(char => char.isFound === false);
+
+      if (
+        x >= currentCharacter.upperLeftX &&
+        x <= currentCharacter.lowerRightX &&
+        y >= currentCharacter.upperLeftY &&
+        y <= currentCharacter.lowerRightY
+      ) {
+        matchingCharacters = [currentCharacter];
+      }
+    }
+    
+    console.log(matchingCharacters)
     const successfulClick = matchingCharacters.length === 1;
     if (successfulClick) {
       handlePlayerMove(successfulClick, matchingCharacters[0])
@@ -86,7 +105,7 @@ function App() {
   }
 
   const newGame = () => {
-    handleHighScoreSubmitted(false)
+    handleHighScoreSubmitted(false);
     setIsModalOpen(false);
     setModalType('endGame');
     setCharacters(sortCharactersByDifficulty(Data));
@@ -102,6 +121,10 @@ function App() {
     setHighScoreSubmitted(show);
   }
 
+  const updateGameMode = (mode) => {
+    setGameMode(mode);
+  }
+
 
   return (
     <div className="App">
@@ -112,6 +135,7 @@ function App() {
         scores={score}
         highscoreSubmitted={highscoreSubmitted}
         handleHighScoreSubmitted={handleHighScoreSubmitted}
+        updateGameMode={updateGameMode}
       />
       <ToastContainer
         position="top-right"
@@ -125,8 +149,8 @@ function App() {
         pauseOnHover={false}
         theme="dark"
       />
-      <Carousel characters={characters} />
-      <Image characters={characters} admin={false} checkClickSuccess={checkClickSuccess} endGame={endGame}/>
+      <Carousel characters={characters} gameMode={gameMode} />
+      <Image characters={characters} admin={false} checkClickSuccess={checkClickSuccess} endGame={endGame} gameMode={gameMode} />
   
     </div>
 

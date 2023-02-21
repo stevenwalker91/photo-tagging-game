@@ -30,6 +30,7 @@ body {
   position: sticky !important;
   top: 0px;
   z-index: 1;
+  justify-content: center;
 }
 
 .option-image {
@@ -142,4 +143,9 @@ button {
 
 .newGameBtn:hover {
   box-shadow: 5px 4px 8px black;
+}
+
+.modeOptions {
+  display: flex;
+  align-items: center;
 }

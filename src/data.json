@@ -6,7 +6,8 @@
     "lowerRightY": 42.073086008058915,
     "name": "Bowser",
     "file": "bowser.png",
-    "difficulty": "Very Easy"
+    "difficulty": "Very Easy",
+    "isFound": false
   },
   {
     "upperLeftX": 67.5,
@@ -15,7 +16,8 @@
     "lowerRightY": 58.86451612903226,
     "name": "Plankton",
     "file": "plankton.webp",
-    "difficulty": "Very Hard"
+    "difficulty": "Very Hard",
+    "isFound": false
   },
   {
     "upperLeftX": 42.83164782867341,
@@ -24,7 +26,8 @@
     "lowerRightY": 79.10721853369121,
     "name": "Johnny Bravo",
     "file": "johnny.png",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "isFound": false
   },
   {
     "upperLeftX": 62.785254534815685,
@@ -33,7 +36,8 @@
     "lowerRightY": 93.3166597193275,
     "name": "Spiderman",
     "file": "spiderman.png",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "isFound": false
   },
   {
     "upperLeftX": 76.4774722059684,
@@ -42,7 +46,8 @@
     "lowerRightY": 88.56467972766431,
     "name": "Dr. Zoidberg",
     "file": "zoidberg.webp",
-    "difficulty": "Very Easy"
+    "difficulty": "Very Easy",
+    "isFound": false
   },
   {
     "upperLeftX": 29.139847864248097,
@@ -51,7 +56,8 @@
     "lowerRightY": 98.49937473947477,
     "name": "Tommy Vercetti",
     "file": "tommyvercetti.png",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "isFound": false
   },
   {
     "upperLeftX": 57.519016968987714,
@@ -60,7 +66,8 @@
     "lowerRightY": 76.08725857996387,
     "name": "Kenny",
     "file": "kenny.png",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "isFound": false
   },
   {
     "upperLeftX": 1.2873025160912814,
@@ -69,7 +76,8 @@
     "lowerRightY": 87.67542031401973,
     "name": "Ash Ketchum",
     "file": "ash.png",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "isFound": false
   },
   {
     "upperLeftX": 64.7162083089526,
@@ -78,7 +86,8 @@
     "lowerRightY": 77.99082951229678,
     "name": "Patrick",
     "file": "patrick.png",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "isFound": false
   },
   {
     "upperLeftX": 84.54661558109834,
@@ -87,7 +96,8 @@
     "lowerRightY": 95.51175132676269,
     "name": "Tom",
     "file": "tom.png",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "isFound": false
   },
   {
     "upperLeftX": 38.13206424747174,
@@ -96,7 +106,8 @@
     "lowerRightY": 60.68653764656025,
     "name": "Neo",
     "file": "neo.png",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "isFound": false
   },
   {
     "upperLeftX": 8.804283164782866,
@@ -105,7 +116,8 @@
     "lowerRightY": 68.21584969628478,
     "name": "Batman",
     "file": "batman.png",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "isFound": false
   },
   {
     "upperLeftX": 20.34503271861987,
@@ -114,7 +126,8 @@
     "lowerRightY": 96.1717756745303,
     "name": "Link",
     "file": "link.png",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "isFound": false
   },
   {
     "upperLeftX": 58.477096966091615,
@@ -123,7 +136,8 @@
     "lowerRightY": 92.41418279417996,
     "name": "The Hollow Knight",
     "file": "hollowknight.webp",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "isFound": false
   },
   {
     "upperLeftX": 32.064247471743016,
@@ -132,7 +146,8 @@
     "lowerRightY": 79.50275462635965,
     "name": "Sonic",
     "file": "sonic.png",
-    "difficulty": "Very Hard"
+    "difficulty": "Very Hard",
+    "isFound": false
   },
   {
     "upperLeftX": 93.51576442593694,
@@ -141,7 +156,8 @@
     "lowerRightY": 77.34143240570702,
     "name": "Stewie",
     "file": "stewie.png",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "isFound": false
   },
   {
     "upperLeftX": 13.38488994646044,
@@ -150,7 +166,8 @@
     "lowerRightY": 71.98756886565899,
     "name": "Brian",
     "file": "brian.webp",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "isFound": false
   },
   {
     "upperLeftX": 60.202260559190954,
@@ -159,7 +176,8 @@
     "lowerRightY": 69.67085746574375,
     "name": "Jabba The Hutt",
     "file": "jabba.webp",
-    "difficulty": "Very Easy"
+    "difficulty": "Very Easy",
+    "isFound": false
   },
   {
     "upperLeftX": 51.576442593694225,
@@ -168,7 +186,8 @@
     "lowerRightY": 74.17714366435936,
     "name": "Vincent Vega (Pulp Fiction)",
     "file": "vincent.png",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "isFound": false
   },
   {
     "upperLeftX": 4.521118381915526,
@@ -177,7 +196,8 @@
     "lowerRightY": 76.11244526063004,
     "name": "Aang (Airbender)",
     "file": "aang.webp",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "isFound": false
   },
   {
     "upperLeftX": 96.54967281380131,
@@ -186,7 +206,8 @@
     "lowerRightY": 78.33027263737816,
     "name": "Phineas",
     "file": "phineas.png",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "isFound": false
   },
   {
     "upperLeftX": 92.20701963117193,
@@ -195,7 +216,8 @@
     "lowerRightY": 94.29297923435513,
     "name": "Chris Griffin",
     "file": "Chris.png",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "isFound": false
   },
   {
     "upperLeftX": 61.21356335514575,
@@ -204,7 +226,8 @@
     "lowerRightY": 73.5273343692612,
     "name": "Roger",
     "file": "roger.png",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "isFound": false
   },
   {
     "upperLeftX": 45.80606781677573,
@@ -213,7 +236,8 @@
     "lowerRightY": 79.72877525074163,
     "name": "Fry",
     "file": "fry.png",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "isFound": false
   },
   {
     "upperLeftX": 31.70731707317073,
@@ -222,7 +246,8 @@
     "lowerRightY": 77.75109478739935,
     "name": "Lois Griffin",
     "file": "lois.png",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "isFound": false
   },
   {
     "upperLeftX": 1.9631171921475312,
@@ -231,7 +256,8 @@
     "lowerRightY": 80.47746856900693,
     "name": "Kang",
     "file": "kang.webp",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "isFound": false
   },
   {
     "upperLeftX": 17.965496728138014,
@@ -240,7 +266,8 @@
     "lowerRightY": 83.5711258652352,
     "name": "Bender",
     "file": "bender.png",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "isFound": false
   },
   {
     "upperLeftX": 80.30933967876264,
@@ -249,6 +276,7 @@
     "lowerRightY": 83.8395253566888,
     "name": "Waldo",
     "file": "waldo.png",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "isFound": false
   }
 ]

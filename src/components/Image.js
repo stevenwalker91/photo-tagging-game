@@ -5,7 +5,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import StopCircleIcon from '@mui/icons-material/StopCircle';
 
 
-const Image = ({admin, checkClickSuccess, characters, endGame}) => {
+const Image = ({admin, checkClickSuccess, characters, endGame, gameMode}) => {
   const [areas, setAreas] = useState([])
 
   const handleClick = (event) => {

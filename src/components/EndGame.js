@@ -24,7 +24,6 @@ const EndGame = ({newGame, scores, highscoreSubmitted, handleHighScoreSubmitted}
 
   useEffect(() => {
     getHighScores().then((results) => {
-      console.log(results)
       if ((results.length > 0 && results[results.length-1].score < scores.score) || results.length < 10) {
         setHighScore(true)
       }
@@ -40,7 +39,17 @@ const EndGame = ({newGame, scores, highscoreSubmitted, handleHighScoreSubmitted}
       <div className="result-message">
         <h2>Well done!</h2>
         <h3>Your score was {scores.score - scores.wrongClicks}
-          <ToolTip />
+          <ToolTip>
+            <h5>How is my score made up?</h5>
+            <p>For each character you find, you will earn points based on the character difficulty. Beware though, for each wrong click you make, 1 point will be deducted from the score. This makes it possible to have a negative score. The points earned for each difficulty are:</p>
+            <ul>
+              <li>Very Easy: 1</li>
+              <li>Easy: 2</li>
+              <li>Medium: 3</li>
+              <li>Hard: 4</li>
+              <li>Very Hard: 5</li>
+            </ul>
+          </ToolTip>
         </h3>
         {highScore && <p>Awesome, it looks like you got a high score! Why not add your score to the leaderboard below?</p>}
         </div>
@@ -74,7 +83,7 @@ const EndGame = ({newGame, scores, highscoreSubmitted, handleHighScoreSubmitted}
           </table>
           {highScore && !highscoreSubmitted && <LeaderboardSubmission score={scores} highscoreSubmitted={handleHighScoreSubmitted} updateHighScores={getHighScores}/>}
         </div>
-        <div style={{alignSelf: 'flex-end'}}><button className="newGameBtn" onClick={newGame}>New Game</button></div>
+        <div style={{alignSelf: 'flex-end', marginTop: '30px'}}><button className="newGameBtn" onClick={newGame}>New Game</button></div>
       </div>
   )
 

@@ -1,10 +1,11 @@
 
 import Modal from 'react-modal';
 import EndGame from './EndGame';
+import StartGame from './StartGame';
 
 Modal.setAppElement('#root');
 
-const Mod = ({modalType, isOpen, newGame, scores, highscoreSubmitted, handleHighScoreSubmitted}) => {
+const Mod = ({modalType, isOpen, newGame, scores, highscoreSubmitted, handleHighScoreSubmitted, updateGameMode}) => {
 
   const styles = {
     overlay: {
@@ -30,12 +31,18 @@ const Mod = ({modalType, isOpen, newGame, scores, highscoreSubmitted, handleHigh
       shouldCloseOnOverlayClick={false}
       style={styles}
     >
+      { modalType === 'endGame' ?
       <EndGame 
         newGame={newGame}
         scores={scores}
         highscoreSubmitted={highscoreSubmitted}
         handleHighScoreSubmitted={handleHighScoreSubmitted}
+      /> :
+      <StartGame 
+        newGame={newGame}
+        updateGameMode={updateGameMode}
       />
+    }
     </Modal>
   )
 
