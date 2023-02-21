@@ -23,7 +23,7 @@ const LeaderBoardSubmission = ({score, highscoreSubmitted}) => {
   const handleSubmission = async (event) => {
     event.preventDefault();
     addHighScore();
-    highscoreSubmitted();
+    highscoreSubmitted(true);
 
   }
 

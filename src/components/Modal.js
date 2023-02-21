@@ -5,11 +5,10 @@ import {collection, query, orderBy, limit, getDocs} from 'firebase/firestore'
 import Modal from 'react-modal';
 Modal.setAppElement('#root');
 
-const Mod = ({modalType, isOpen, newGame, scores}) => {
+const Mod = ({modalType, isOpen, newGame, scores, highscoreSubmitted, handleHighScoreSubmitted}) => {
 
   const [highScores, setHighscores] = useState([]);
-  const [highscoreSubmitted, setHighScoreSubmitted] = useState(false);
-
+  
   const getHighScores = async () => {
     const leaderboard = collection(db, 'leaderboard')
     const q = query(leaderboard, orderBy('score', 'desc'), limit(10));
@@ -26,9 +25,6 @@ const Mod = ({modalType, isOpen, newGame, scores}) => {
     getHighScores()
   }, [highscoreSubmitted])
 
-  const markHighScoreSubmitted = () => {
-    setHighScoreSubmitted(true);
-  }
 
   const styles = {
     overlay: {
@@ -89,7 +85,7 @@ const Mod = ({modalType, isOpen, newGame, scores}) => {
                   }
                 </tbody>
               </table>
-              {highScore && !highscoreSubmitted && <LeaderboardSubmission score={scores} highscoreSubmitted={markHighScoreSubmitted} updateHighScores={getHighScores}/>}
+              {highScore && !highscoreSubmitted && <LeaderboardSubmission score={scores} highscoreSubmitted={handleHighScoreSubmitted} updateHighScores={getHighScores}/>}
             </div>
             <div style={{alignSelf: 'flex-end'}}><button onClick={newGame}>New Game</button></div>
           </>

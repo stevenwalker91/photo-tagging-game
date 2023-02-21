@@ -21,6 +21,7 @@ function App() {
   const [score, setScore] = useState({score: 0, wrongClicks: 0});
   const [modalType, setModalType] = useState('endGame');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [highscoreSubmitted, setHighScoreSubmitted] = useState(false);
 
   const handlePlayerMove = (successful, character) => {
     const newScore = score;
@@ -68,7 +69,9 @@ function App() {
   }
 
   const newGame = () => {
+    handleHighScoreSubmitted(false)
     setIsModalOpen(false);
+    setModalType('endGame');
     setCharacters(sortCharactersByDifficulty(Data));
     setScore({score: 0, wrongClicks: 0});
     
@@ -76,6 +79,10 @@ function App() {
 
   const endGame = () => {
     setIsModalOpen(true);
+  }
+
+  const handleHighScoreSubmitted = (show) => {
+    setHighScoreSubmitted(show);
   }
 
 
@@ -86,6 +93,8 @@ function App() {
         isOpen={isModalOpen}
         newGame={newGame}
         scores={score}
+        highscoreSubmitted={highscoreSubmitted}
+        handleHighScoreSubmitted={handleHighScoreSubmitted}
       />
       <ToastContainer
         position="top-right"
