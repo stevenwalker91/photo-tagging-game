@@ -3,7 +3,7 @@ import './App.css';
 import Image from './components/Image';
 import Carousel from './components/Carousel';
 import Data from './data.json';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Modal from './components/Modal'
@@ -44,6 +44,22 @@ function App() {
 
     setScore(newScore); 
   }
+
+  useEffect(() => {
+  const checkForWin = () => {
+    const remainingCharacters = characters.filter((char) => {
+      if (!char.isFound) {
+        return char;
+      }
+      return null;
+    })
+
+    if (!remainingCharacters.length > 0) {
+     endGame();
+    }
+  }
+    checkForWin()
+  }, [characters])
 
   const checkClickSuccess = (x, y) => {
     const matchingCharacters = characters.filter((char) => {
