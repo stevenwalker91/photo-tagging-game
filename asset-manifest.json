@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/photo-tagging-game/static/css/main.9c544fde.css",
-    "main.js": "/photo-tagging-game/static/js/main.af98cf6e.js",
+    "main.css": "/photo-tagging-game/static/css/main.8f3e2b40.css",
+    "main.js": "/photo-tagging-game/static/js/main.c13b4303.js",
     "static/media/revicons.eot": "/photo-tagging-game/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/photo-tagging-game/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/photo-tagging-game/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/photo-tagging-game/index.html",
-    "main.9c544fde.css.map": "/photo-tagging-game/static/css/main.9c544fde.css.map",
-    "main.af98cf6e.js.map": "/photo-tagging-game/static/js/main.af98cf6e.js.map"
+    "main.8f3e2b40.css.map": "/photo-tagging-game/static/css/main.8f3e2b40.css.map",
+    "main.c13b4303.js.map": "/photo-tagging-game/static/js/main.c13b4303.js.map"
   },
   "entrypoints": [
-    "static/css/main.9c544fde.css",
-    "static/js/main.af98cf6e.js"
+    "static/css/main.8f3e2b40.css",
+    "static/js/main.c13b4303.js"
   ]
 }
