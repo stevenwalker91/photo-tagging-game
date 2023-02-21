@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/photo-tagging-game/static/css/main.2dc2394e.css",
-    "main.js": "/photo-tagging-game/static/js/main.c440a364.js",
+    "main.js": "/photo-tagging-game/static/js/main.19b06b75.js",
     "static/media/revicons.eot": "/photo-tagging-game/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/photo-tagging-game/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/photo-tagging-game/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/photo-tagging-game/index.html",
     "main.2dc2394e.css.map": "/photo-tagging-game/static/css/main.2dc2394e.css.map",
-    "main.c440a364.js.map": "/photo-tagging-game/static/js/main.c440a364.js.map"
+    "main.19b06b75.js.map": "/photo-tagging-game/static/js/main.19b06b75.js.map"
   },
   "entrypoints": [
     "static/css/main.2dc2394e.css",
-    "static/js/main.c440a364.js"
+    "static/js/main.19b06b75.js"
   ]
 }
