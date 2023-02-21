@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 
-const Image = ({admin, checkClickSuccess, characters}) => {
+const Image = ({admin, checkClickSuccess, characters, endGame}) => {
   const [areas, setAreas] = useState([])
 
   const handleClick = (event) => {
@@ -66,6 +66,7 @@ const handleDrag = (event) => {
       />
       </>
       }
+      <span className="endGameBtn"><button onClick={() => endGame()}>End Game</button></span>
       {characters.map((char) => {
         if (char.isFound) {
           const leftVal = `calc(${char.upperLeftX}%)`;

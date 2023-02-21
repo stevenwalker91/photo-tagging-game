@@ -20,7 +20,7 @@ function App() {
   const [characters, setCharacters] = useState(sortCharactersByDifficulty(Data));
   const [score, setScore] = useState({score: 0, wrongClicks: 0});
   const [modalType, setModalType] = useState('endGame');
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handlePlayerMove = (successful, character) => {
     const newScore = score;
@@ -71,6 +71,11 @@ function App() {
     setIsModalOpen(false);
     setCharacters(sortCharactersByDifficulty(Data));
     setScore({score: 0, wrongClicks: 0});
+    
+  }
+
+  const endGame = () => {
+    setIsModalOpen(true);
   }
 
 
@@ -95,7 +100,7 @@ function App() {
         theme="dark"
       />
       <Carousel characters={characters} />
-      <Image characters={characters} admin={false} checkClickSuccess={checkClickSuccess}/>
+      <Image characters={characters} admin={false} checkClickSuccess={checkClickSuccess} endGame={endGame}/>
   
     </div>
 

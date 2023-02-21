@@ -91,11 +91,8 @@ const Mod = ({modalType, isOpen, newGame, scores}) => {
               </table>
               {highScore && !highscoreSubmitted && <LeaderboardSubmission score={scores} highscoreSubmitted={markHighScoreSubmitted} updateHighScores={getHighScores}/>}
             </div>
-            <div><button onClick={newGame}>New Game</button></div>
-           
-            
+            <div style={{alignSelf: 'flex-end'}}><button onClick={newGame}>New Game</button></div>
           </>
-      
       )
       
     }
