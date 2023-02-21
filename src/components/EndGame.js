@@ -74,7 +74,7 @@ const EndGame = ({newGame, scores, highscoreSubmitted, handleHighScoreSubmitted}
           </table>
           {highScore && !highscoreSubmitted && <LeaderboardSubmission score={scores} highscoreSubmitted={handleHighScoreSubmitted} updateHighScores={getHighScores}/>}
         </div>
-        <div style={{alignSelf: 'flex-end'}}><button onClick={newGame}>New Game</button></div>
+        <div style={{alignSelf: 'flex-end'}}><button className="newGameBtn" onClick={newGame}>New Game</button></div>
       </div>
   )
 

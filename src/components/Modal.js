@@ -12,7 +12,6 @@ const Mod = ({modalType, isOpen, newGame, scores, highscoreSubmitted, handleHigh
       backgroundColor: 'rgb(9 2 2 / 68%)'
     },
     content: {
-      height: '60%',
       marginTop: 'auto',
       marginBottom: 'auto',
       display: 'flex',

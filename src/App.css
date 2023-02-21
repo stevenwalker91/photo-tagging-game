@@ -111,8 +111,11 @@ table {
 
 .endGameBtn {
   position: fixed;
-  left: 80%;
+  left: 50%;
   bottom: 7%;
+  width: 100px;
+  margin-left: -50px;
+
 }
 
 .endGameBtn>button {
@@ -123,4 +126,20 @@ table {
 .endGameBtn>button:hover {
   background-color: white;
   border: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.newGameBtn {
+  background-color: #05ff05;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+
+}
+
+.newGameBtn:hover {
+  box-shadow: 5px 4px 8px black;
 }
