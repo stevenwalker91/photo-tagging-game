@@ -80,8 +80,8 @@ body {
 .modal-container {
   display: flex;
   flex-direction: column;
-  gap: 10%;
   padding: 2%;
+  width: 80%;
 }
 
 .leader-board-container {

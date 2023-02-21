@@ -26,7 +26,8 @@ function App() {
   const handlePlayerMove = (successful, character) => {
     const newScore = score;
     if (successful) {
-      newScore.score = score.score + 1;
+      const scoreValues = ['Very Easy', 'Easy', 'Medium', 'Hard', 'Very Hard'];
+      newScore.score = score.score + scoreValues.indexOf(character.difficulty)+1;
       toast.success(`Excellent, you found ${character.name}!`)
       setCharacters(characters.map(char => {
         if (char.name === character.name) {

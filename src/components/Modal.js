@@ -4,6 +4,8 @@ import {db} from '../firebase_setup/firebase'
 import {collection, query, orderBy, limit, getDocs} from 'firebase/firestore'
 import Modal from 'react-modal';
 import { v4 as uuidv4 } from 'uuid';
+import ToolTip from './ToolTip';
+
 Modal.setAppElement('#root');
 
 const Mod = ({modalType, isOpen, newGame, scores, highscoreSubmitted, handleHighScoreSubmitted}) => {
@@ -61,12 +63,15 @@ const Mod = ({modalType, isOpen, newGame, scores, highscoreSubmitted, handleHigh
       returnElements = (
         <>
           <div className="result-message">
-              <p>
-                Your score was <b>{scores.score - scores.wrongClicks}</b>. This is made up of the characters you found ({scores.score}) minus the clicks you made that were incorrect ({scores.wrongClicks}).
-              </p>
-              {highScore && <p>Awesome, it looks like you got a high score! Why not add your score to the leaderboard below?</p>}
+            <h2>Well done!</h2>
+            <h3>Your score was {scores.score - scores.wrongClicks}
+              <ToolTip />
+            </h3>
+            {highScore && <p>Awesome, it looks like you got a high score! Why not add your score to the leaderboard below?</p>}
             </div>
+            <h4 style={{textAlign: 'center'}}>Leaderboard</h4>
             <div className="leader-board-container">
+              
               <table>
                 <thead>
                   <tr>
