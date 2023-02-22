@@ -29,17 +29,6 @@ function App() {
   }
   */
 
-  useEffect(() => {
-    window.addEventListener('scroll', resize);
-  }, []);
-
-  const resize = () => {
-    console.log('log')
-    const el = document.querySelector('.react-multi-carousel-list');
-      el.style["transform"] = "scale(" + window.innerWidth/document.documentElement.clientWidth + ")";
-  }
-  
-
   const [characters, setCharacters] = useState(sortCharactersByDifficulty(Data));
   const [score, setScore] = useState({score: 0, wrongClicks: 0});
   const [modalType, setModalType] = useState('startGame');
