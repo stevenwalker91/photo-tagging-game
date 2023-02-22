@@ -10,7 +10,8 @@ const Mod = ({modalType, isOpen, newGame, scores, highscoreSubmitted, handleHigh
   const styles = {
     overlay: {
       zIndex: 2,
-      backgroundColor: 'rgb(9 2 2 / 68%)'
+      backgroundColor: 'rgb(9 2 2 / 68%)',
+
     },
     content: {
       marginTop: 'auto',
@@ -20,7 +21,11 @@ const Mod = ({modalType, isOpen, newGame, scores, highscoreSubmitted, handleHigh
       borderColor: 'black',
       color: 'white',
       justifyContent: 'space-evenly',
-      height: 'fit-content'
+      height: 'fit-content',
+      maxWidth: '800px',
+      marginLeft: 'auto',
+      marginRight: 'auto'
+
     }
   }
 
