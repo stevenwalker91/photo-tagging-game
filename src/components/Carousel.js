@@ -3,7 +3,6 @@ import "react-multi-carousel/lib/styles.css";
 import Character from "./Character";
 import { v4 as uuidv4 } from 'uuid';
 
-
 const Car = ({characters, gameMode}) => {
 
   const responsive = {
