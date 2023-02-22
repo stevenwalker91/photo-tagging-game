@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 
 const StartGame = ({newGame, updateGameMode, gameMode}) => {
   const [checked, setChecked] = useState(false);
-  const [imageSelected, setImageSelected] = useState('');
+  const [imageSelected, setImageSelected] = useState('mapOne');
 
   const handleChange = (event) => {
     setChecked(event.target.checked);
@@ -58,6 +58,12 @@ const StartGame = ({newGame, updateGameMode, gameMode}) => {
         onClick={(event) => handleImageSelect(event)}
       />
       </div>
+      <Typography variant="body1" gutterBottom>
+        How to play?
+      </Typography>
+      <Typography variant="body2" gutterBottom>
+        Simply find the characters that are presented in the banner at the top of the page. Click the character once you find them to earn points.
+      </Typography>
 
       <button className="newGameBtn" onClick={() => newGame()}>New Game</button>
     </div>

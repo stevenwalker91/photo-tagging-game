@@ -21,13 +21,23 @@ function App() {
       ultimately we'll check which map the user has selected, and dynamically import data to set the characters
 
   let Data;
-  
+
   if (true) {
     import("./data.json").then((data) => {
     Data = data.default;
   });
   }
   */
+
+  useEffect(() => {
+    window.addEventListener('scroll', resize);
+  }, []);
+
+  const resize = () => {
+    console.log('log')
+    const el = document.querySelector('.react-multi-carousel-list');
+      el.style["transform"] = "scale(" + window.innerWidth/document.documentElement.clientWidth + ")";
+  }
   
 
   const [characters, setCharacters] = useState(sortCharactersByDifficulty(Data));
