@@ -24,6 +24,7 @@ const Image = ({admin, checkClickSuccess, characters, endGame, gameMode}) => {
 
 // admin utility function to select char coords
 const handleDrag = (event) => {
+  if (!admin) return;
   event.preventDefault();
   const imageWidth = event.target.offsetWidth;
   const xClickWithinImage = event.nativeEvent.offsetX;
@@ -64,6 +65,26 @@ const handleDrag = (event) => {
             src={`${process.env.PUBLIC_URL}/assets/background-img.jpg` }
             alt="a huge panorama containing lots of different characters"
           />
+          {characters.map((char) => {
+            if (char.isFound) {
+              const leftVal = `calc(${char.upperLeftX}%)`;
+              const topVal = `calc(${char.upperLeftY}%)`;
+              const width = `${char.lowerRightX - char.upperLeftX}%`
+              const height = `${char.lowerRightY - char.upperLeftY}%`
+              return (
+              <div 
+                className="square" 
+                style={{left: leftVal, top: topVal, width: width, height: height, padding: "0px" }}
+                key={uuidv4()}
+              >
+                <span style={{top: 'auto'}} className="check-circle"><CheckCircleIcon /></span>
+              </div>
+              )
+            } else {
+              return '';
+            }
+
+          })}
        </TransformComponent>
       </TransformWrapper>
       <span 
@@ -73,26 +94,7 @@ const handleDrag = (event) => {
           <StopCircleIcon sx={{color: 'red', fontSize: "80px"}}/>
         </IconButton>
       </span>
-      {characters.map((char) => {
-        if (char.isFound) {
-          const leftVal = `calc(${char.upperLeftX}%)`;
-          const topVal = `calc(${char.upperLeftY}%)`;
-          const width = `${char.lowerRightX - char.upperLeftX}%`
-          const height = `${char.lowerRightY - char.upperLeftY}%`
-          return (
-          <div 
-            className="square" 
-            style={{left: leftVal, top: topVal, width: width, height: height, padding: "0px" }}
-            key={uuidv4()}
-          >
-            <span style={{top: 'auto'}} className="check-circle"><CheckCircleIcon /></span>
-          </div>
-          )
-        } else {
-          return '';
-        }
-
-      })}
+      
     </div>
 
 
