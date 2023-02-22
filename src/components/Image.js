@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import IconButton from '@mui/material/IconButton';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import StopCircleIcon from '@mui/icons-material/StopCircle';
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 
 const Image = ({admin, checkClickSuccess, characters, endGame, gameMode}) => {
@@ -49,26 +50,22 @@ const handleDrag = (event) => {
 
   return (
 
-    <div className="image-container">
+    <div 
+      className="image-container" 
+      onClick={(event) => handleClick(event)} 
+      onMouseDown={(event) => handleDrag(event)} 
+      onMouseUp={(event) => handleDrag(event)}
+    >
       <span className='credit'>Big thanks to <a href="https://www.instagram.com/chekavo/?hl=en" target="_blank" rel="noreferrer">Egor Klyuchnyk</a> for letting me use his awesome art work.</span>
-      { admin ?
-      <img 
-        className="game-image" 
-        src={`${process.env.PUBLIC_URL}/assets/background-img.jpg` }
-        alt="a huge panorama containing lots of different characters"
-        onMouseDown={(event) => handleDrag(event)}
-        onMouseUp={(event) => handleDrag(event)}
-      />
-      :
-      <>
-      <img 
-        className="game-image" 
-        src={`${process.env.PUBLIC_URL}/assets/background-img.jpg` }
-        alt="a huge panorama containing lots of different characters"
-        onClick={(event) => handleClick(event)}
-      />
-      </>
-      }
+      <TransformWrapper wheel={{wheelDisabled: true}} doubleClick={{disabled: true}} panning={{disabled: true}}>
+        <TransformComponent>
+          <img 
+            className="game-image" 
+            src={`${process.env.PUBLIC_URL}/assets/background-img.jpg` }
+            alt="a huge panorama containing lots of different characters"
+          />
+       </TransformComponent>
+      </TransformWrapper>
       <span 
         className="endGameBtn"
       >
