@@ -5,7 +5,7 @@ import StartGame from './StartGame';
 
 Modal.setAppElement('#root');
 
-const Mod = ({modalType, isOpen, newGame, scores, highscoreSubmitted, handleHighScoreSubmitted, updateGameMode}) => {
+const Mod = ({modalType, isOpen, newGame, scores, highscoreSubmitted, handleHighScoreSubmitted, updateGameMode, displayOptionsModal}) => {
 
   const styles = {
     overlay: {
@@ -38,6 +38,7 @@ const Mod = ({modalType, isOpen, newGame, scores, highscoreSubmitted, handleHigh
         scores={scores}
         highscoreSubmitted={highscoreSubmitted}
         handleHighScoreSubmitted={handleHighScoreSubmitted}
+        displayOptionsModal={displayOptionsModal}
       /> :
       <StartGame 
         newGame={newGame}

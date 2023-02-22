@@ -5,7 +5,7 @@ import {collection, query, orderBy, limit, getDocs} from 'firebase/firestore'
 import { v4 as uuidv4 } from 'uuid';
 import ToolTip from './ToolTip';
 
-const EndGame = ({newGame, scores, highscoreSubmitted, handleHighScoreSubmitted}) => {
+const EndGame = ({newGame, scores, highscoreSubmitted, handleHighScoreSubmitted, displayOptionsModal}) => {
   const [highScores, setHighscores] = useState([]);
   const [highScore, setHighScore] = useState(false);
 
@@ -83,7 +83,10 @@ const EndGame = ({newGame, scores, highscoreSubmitted, handleHighScoreSubmitted}
           </table>
           {highScore && !highscoreSubmitted && <LeaderboardSubmission score={scores} highscoreSubmitted={handleHighScoreSubmitted} updateHighScores={getHighScores}/>}
         </div>
-        <div style={{alignSelf: 'flex-end', marginTop: '30px'}}><button className="newGameBtn" onClick={newGame}>New Game</button></div>
+        <div style={{alignSelf: 'flex-end', marginTop: '30px'}}>
+        <button className="optionsBtn" onClick={displayOptionsModal}>Options</button>
+          <button className="newGameBtn" onClick={newGame}>New Game</button>
+        </div>
       </div>
   )
 

@@ -124,6 +124,10 @@ function App() {
     setGameMode(mode);
   }
 
+  const displayOptionsModal = () => {
+    setModalType('startGame')
+  }
+
 
   return (
     <div className="App">
@@ -135,6 +139,7 @@ function App() {
         highscoreSubmitted={highscoreSubmitted}
         handleHighScoreSubmitted={handleHighScoreSubmitted}
         updateGameMode={updateGameMode}
+        displayOptionsModal={displayOptionsModal}
       />
       <ToastContainer
         position="top-right"
