@@ -85,19 +85,17 @@ body {
   display: flex;
   flex-direction: column;
   padding: 2%;
-  width: 80%;
 }
 
 .leader-board-container {
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
+  flex-direction: column-reverse;
 }
 
 form {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 7px;
+  gap: 10px;
 }
 
 table,
@@ -110,7 +108,7 @@ th {
 
 table {
   text-align: center;
-  width: 60%;
+  width: 100%;
 }
 
 .endGameBtn {
@@ -123,13 +121,15 @@ table {
 }
 
 .endGameBtn>button {
-  background-color: none;
+  background-color: white;
   border: none;
+  opacity: 0.8;
 }
 
 .endGameBtn>button:hover {
+  box-shadow: 5px 4px 8px black;
   background-color: white;
-  border: none;
+  opacity: 1;
 }
 
 button {

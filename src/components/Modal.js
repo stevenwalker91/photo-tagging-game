@@ -19,7 +19,8 @@ const Mod = ({modalType, isOpen, newGame, scores, highscoreSubmitted, handleHigh
       backgroundColor: '#202124',
       borderColor: 'black',
       color: 'white',
-      justifyContent: 'space-evenly'
+      justifyContent: 'space-evenly',
+      height: 'fit-content'
     }
   }
 

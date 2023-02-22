@@ -71,7 +71,7 @@ const handleDrag = (event) => {
       <span 
         className="endGameBtn"
       >
-        <IconButton size="large" onClick={() => endGame()}>
+        <IconButton size="medium" onClick={() => endGame()}>
           <StopCircleIcon sx={{color: 'red', fontSize: "80px"}}/>
         </IconButton>
       </span>
