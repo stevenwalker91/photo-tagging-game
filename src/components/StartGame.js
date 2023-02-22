@@ -1,9 +1,10 @@
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ToolTip from './ToolTip';
 
-const StartGame = ({newGame, updateGameMode}) => {
+
+const StartGame = ({newGame, updateGameMode, gameMode}) => {
   const [checked, setChecked] = useState(false);
 
   const handleChange = (event) => {
@@ -14,6 +15,16 @@ const StartGame = ({newGame, updateGameMode}) => {
       updateGameMode('default')
     }
   };
+
+  useEffect(() => {
+    if (gameMode === 'single') {
+      setChecked(true);
+    }
+
+    if (gameMode === 'default') {
+      setChecked(false);
+    }
+  }, [gameMode])
 
   return (
     <div className="modal-container">

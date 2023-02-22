@@ -140,6 +140,7 @@ function App() {
         handleHighScoreSubmitted={handleHighScoreSubmitted}
         updateGameMode={updateGameMode}
         displayOptionsModal={displayOptionsModal}
+        gameMode={gameMode}
       />
       <ToastContainer
         position="top-right"
