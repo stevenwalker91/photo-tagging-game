@@ -58,7 +58,7 @@ const handleDrag = (event) => {
       onMouseUp={(event) => handleDrag(event)}
     >
       <span className='credit'>Big thanks to <a href="https://www.instagram.com/chekavo/?hl=en" target="_blank" rel="noreferrer">Egor Klyuchnyk</a> for letting me use his awesome art work.</span>
-      <TransformWrapper wheel={{wheelDisabled: true}} doubleClick={{disabled: true}} panning={{disabled: true}}>
+      <TransformWrapper wheel={{wheelDisabled: true}} doubleClick={{disabled: true}}>
         <TransformComponent>
           <img 
             className="game-image" 
