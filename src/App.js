@@ -17,6 +17,19 @@ function App() {
     })
   }
 
+  /* this is for dynamic imports which will replace the data import. 
+      ultimately we'll check which map the user has selected, and dynamically import data to set the characters
+
+  let Data;
+  
+  if (true) {
+    import("./data.json").then((data) => {
+    Data = data.default;
+  });
+  }
+  */
+  
+
   const [characters, setCharacters] = useState(sortCharactersByDifficulty(Data));
   const [score, setScore] = useState({score: 0, wrongClicks: 0});
   const [modalType, setModalType] = useState('startGame');

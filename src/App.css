@@ -171,3 +171,12 @@ h2,
 h3 {
   margin-top: 0px;
 }
+
+.preview-image {
+  max-width: 100%;
+
+}
+
+.image-selected {
+  border: 2px solid #05ff05;
+}
