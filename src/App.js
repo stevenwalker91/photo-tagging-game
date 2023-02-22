@@ -92,8 +92,7 @@ function App() {
         matchingCharacters = [currentCharacter];
       }
     }
-    
-    console.log(matchingCharacters)
+
     const successfulClick = matchingCharacters.length === 1;
     if (successfulClick) {
       handlePlayerMove(successfulClick, matchingCharacters[0])

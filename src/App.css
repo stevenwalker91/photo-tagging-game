@@ -30,6 +30,9 @@ body {
   position: sticky !important;
   top: 0px;
   z-index: 1;
+}
+
+.centered {
   justify-content: center;
 }
 

@@ -1,6 +1,6 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import Character from "../Character";
+import Character from "./Character";
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -30,7 +30,11 @@ const Car = ({characters, gameMode}) => {
     }
 
     if (gameMode === 'single') {
-      const nextCharacter = characters.find(char => char.isFound === false);
+      let nextCharacter = characters.find(char => char.isFound === false);
+      if (!nextCharacter ) {
+        nextCharacter = characters[characters.length-1];
+  
+      }
       return <Character character={nextCharacter} />
     }
   }
@@ -43,9 +47,8 @@ const Car = ({characters, gameMode}) => {
       responsive={responsive}
       infinite={true}
       keyBoardControl={true}
-      containerClass="carousel-container"
+      containerClass={ gameMode === 'default' ? 'carousel-container' : 'carousel-container centered'}
       partialVisible={false}
-   
     >
       { charactersToDisplay() }
 
