@@ -79,6 +79,7 @@ body {
   padding: 10px;
   background-color: #ffffff80;
   border-radius: 3px;
+  z-index: 1;
 }
 
 .modal-container {
