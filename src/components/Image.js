@@ -3,9 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 import IconButton from '@mui/material/IconButton';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import StopCircleIcon from '@mui/icons-material/StopCircle';
-import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Loader from './Loader';
-import {isMobile} from 'react-device-detect';
+
 
 
 const Image = ({admin, checkClickSuccess, characters, endGame, mapToUse}) => {
@@ -62,8 +61,6 @@ const handleDrag = (event) => {
     >
       <span className='credit'>Big thanks to <a href="https://www.instagram.com/chekavo/?hl=en" target="_blank" rel="noreferrer">Egor Klyuchnyk</a> for letting me use his awesome art work.</span>
       <Loader style={{display: loading ? "block" : "none"}} /> 
-      <TransformWrapper wheel={{wheelDisabled: true}} doubleClick={{disabled: true}} panning={{disabled: isMobile ? false : true}}>
-         <TransformComponent>
       <img 
         className="game-image" 
         src={`${process.env.PUBLIC_URL}/assets/${mapToUse}.jpeg` }
@@ -90,7 +87,6 @@ const handleDrag = (event) => {
           return '';
         }
       })}
-      </TransformComponent></TransformWrapper>
       <span 
         className="endGameBtn"
       >
