@@ -3,7 +3,6 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import { useState, useEffect } from 'react';
 import ToolTip from './ToolTip';
 import Typography from '@mui/material/Typography';
-import Loader from './Loader';
 import { v4 as uuidv4 } from 'uuid';
 import PreviewImage from './PreviewImage';
 
@@ -11,7 +10,6 @@ import PreviewImage from './PreviewImage';
 const StartGame = ({newGame, updateGameMode, gameMode, updateMap}) => {
   const [checked, setChecked] = useState(false);
   const [imageSelected, setImageSelected] = useState('mapOne');
-  const [loading, setLoading] = useState(true);
 
   const maps = [{name: 'mapOne', url: '/assets/mapOnePreview.png'}, {name: 'mapTwo', url: '/assets/mapTwoPreview.png'}]
 
