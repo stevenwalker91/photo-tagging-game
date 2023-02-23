@@ -7,7 +7,7 @@ import Loader from './Loader';
 import { v4 as uuidv4 } from 'uuid';
 
 
-const StartGame = ({newGame, updateGameMode, gameMode}) => {
+const StartGame = ({newGame, updateGameMode, gameMode, updateMap}) => {
   const [checked, setChecked] = useState(false);
   const [imageSelected, setImageSelected] = useState('mapOne');
   const [loading, setLoading] = useState(true);
@@ -35,6 +35,7 @@ const StartGame = ({newGame, updateGameMode, gameMode}) => {
 
   const handleImageSelect = (event) => {
     setImageSelected(event.target.name);
+    updateMap(event.target.name)
   }
 
   return (

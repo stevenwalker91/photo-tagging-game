@@ -7,7 +7,7 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Loader from './Loader';
 
 
-const Image = ({admin, checkClickSuccess, characters, endGame, gameMode}) => {
+const Image = ({admin, checkClickSuccess, characters, endGame, mapToUse}) => {
   const [areas, setAreas] = useState([])
   const [loading, setLoading] = useState(true);
 
@@ -62,7 +62,7 @@ const handleDrag = (event) => {
       <Loader style={{display: loading ? "block" : "none"}} /> 
       <img 
         className="game-image" 
-        src={`${process.env.PUBLIC_URL}/assets/background-img.jpg` }
+        src={`${process.env.PUBLIC_URL}/assets/${mapToUse}.jpeg` }
         alt="a huge panorama containing lots of different characters"
         style={{display: loading ? "none" : "block"}}
         onLoad={() => setLoading(false)}

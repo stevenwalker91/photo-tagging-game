@@ -2,7 +2,8 @@
 import './App.css';
 import Image from './components/Image';
 import Carousel from './components/Carousel';
-import Data from './data.json';
+import MapOneCharacters from './maponedata.json';
+import MapTwoCharacters from './maptwodata.json';
 import { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -17,24 +18,14 @@ function App() {
     })
   }
 
-  /* this is for dynamic imports which will replace the data import. 
-      ultimately we'll check which map the user has selected, and dynamically import data to set the characters
-
-  let Data;
-
-  if (true) {
-    import("./data.json").then((data) => {
-    Data = data.default;
-  });
-  }
-  */
-
-  const [characters, setCharacters] = useState(sortCharactersByDifficulty(Data));
+  const [mapToUse, setMapToUse] = useState('mapOne');
+  const [characters, setCharacters] = useState(sortCharactersByDifficulty(MapOneCharacters));
   const [score, setScore] = useState({score: 0, wrongClicks: 0});
   const [modalType, setModalType] = useState('startGame');
   const [isModalOpen, setIsModalOpen] = useState(true);
   const [highscoreSubmitted, setHighScoreSubmitted] = useState(false);
   const [gameMode, setGameMode] = useState('default');
+  
 
   const handlePlayerMove = (successful, character) => {
     const newScore = score;
@@ -119,8 +110,15 @@ function App() {
     handleHighScoreSubmitted(false);
     setIsModalOpen(false);
     setModalType('endGame');
-    setCharacters(sortCharactersByDifficulty(Data));
     setScore({score: 0, wrongClicks: 0});
+
+    if (mapToUse === 'mapOne') {
+      setCharacters(sortCharactersByDifficulty(MapOneCharacters));
+    }
+
+    if (mapToUse === 'mapTwo') {
+      setCharacters(sortCharactersByDifficulty(MapTwoCharacters));
+    }
     
   }
 
@@ -140,6 +138,17 @@ function App() {
     setModalType('startGame')
   }
 
+  const updateMap = (mapName) => {
+    setMapToUse(mapName);
+    if (mapName === 'mapOne') {
+      setCharacters(sortCharactersByDifficulty(MapOneCharacters));
+    }
+
+    if (mapName === 'mapTwo') {
+      setCharacters(sortCharactersByDifficulty(MapTwoCharacters));
+    }
+  }
+
 
   return (
     <div className="App">
@@ -153,6 +162,7 @@ function App() {
         updateGameMode={updateGameMode}
         displayOptionsModal={displayOptionsModal}
         gameMode={gameMode}
+        updateMap={updateMap}
       />
       <ToastContainer
         position="top-right"
@@ -167,7 +177,7 @@ function App() {
         theme="dark"
       />
       <Carousel characters={characters} gameMode={gameMode} />
-      <Image characters={characters} admin={false} checkClickSuccess={checkClickSuccess} endGame={endGame} gameMode={gameMode} />
+      <Image characters={characters} admin={true} checkClickSuccess={checkClickSuccess} endGame={endGame} gameMode={gameMode} mapToUse={mapToUse}/>
   
     </div>
 

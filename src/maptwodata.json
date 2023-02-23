@@ -1,0 +1,12 @@
+[
+  {
+    "upperLeftX": 1.236917221693625,
+    "upperLeftY": 3.0303030303030303,
+    "lowerRightX": 7.897240723120837,
+    "lowerRightY": 7.8125,
+    "name": "Patrick",
+    "file": "patrick.png",
+    "difficulty": "Easy",
+    "isFound": false
+  }
+]
