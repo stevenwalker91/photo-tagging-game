@@ -55,7 +55,6 @@ const handleDrag = (event) => {
 
     <div 
       className="image-container" 
-      onClick={(event) => handleClick(event)} 
       onMouseDown={(event) => handleDrag(event)} 
       onMouseUp={(event) => handleDrag(event)}
     >
@@ -67,6 +66,7 @@ const handleDrag = (event) => {
         alt="a huge panorama containing lots of different characters"
         style={{display: loading ? "none" : "block"}}
         onLoad={() => setLoading(false)}
+        onClick={(event) => handleClick(event)} 
       />
       {characters.map((char) => {
         if (char.isFound) {
