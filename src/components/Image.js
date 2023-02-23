@@ -58,35 +58,32 @@ const handleDrag = (event) => {
       onMouseUp={(event) => handleDrag(event)}
     >
       <span className='credit'>Big thanks to <a href="https://www.instagram.com/chekavo/?hl=en" target="_blank" rel="noreferrer">Egor Klyuchnyk</a> for letting me use his awesome art work.</span>
-      <TransformWrapper wheel={{wheelDisabled: true}} doubleClick={{disabled: false}} panning={{disabled: true}}>
-        <TransformComponent>
-          <img 
-            className="game-image" 
-            src={`${process.env.PUBLIC_URL}/assets/background-img.jpg` }
-            alt="a huge panorama containing lots of different characters"
-          />
-          {characters.map((char) => {
-            if (char.isFound) {
-              const leftVal = `calc(${char.upperLeftX}%)`;
-              const topVal = `calc(${char.upperLeftY}%)`;
-              const width = `${char.lowerRightX - char.upperLeftX}%`
-              const height = `${char.lowerRightY - char.upperLeftY}%`
-              return (
-              <div 
-                className="square" 
-                style={{left: leftVal, top: topVal, width: width, height: height, padding: "0px" }}
-                key={uuidv4()}
-              >
-                <span style={{top: 'auto'}} className="check-circle"><CheckCircleIcon /></span>
-              </div>
-              )
-            } else {
-              return '';
-            }
+  
+      <img 
+        className="game-image" 
+        src={`${process.env.PUBLIC_URL}/assets/background-img.jpg` }
+        alt="a huge panorama containing lots of different characters"
+      />
+      {characters.map((char) => {
+        if (char.isFound) {
+          const leftVal = `calc(${char.upperLeftX}%)`;
+          const topVal = `calc(${char.upperLeftY}%)`;
+          const width = `${char.lowerRightX - char.upperLeftX}%`
+          const height = `${char.lowerRightY - char.upperLeftY}%`
+          return (
+          <div 
+            className="square" 
+            style={{left: leftVal, top: topVal, width: width, height: height, padding: "0px" }}
+            key={uuidv4()}
+          >
+            <span style={{top: 'auto'}} className="check-circle"><CheckCircleIcon /></span>
+          </div>
+          )
+        } else {
+          return '';
+        }
 
-          })}
-       </TransformComponent>
-      </TransformWrapper>
+      })}
       <span 
         className="endGameBtn"
       >
