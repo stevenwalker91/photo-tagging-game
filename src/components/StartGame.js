@@ -3,11 +3,13 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import { useState, useEffect } from 'react';
 import ToolTip from './ToolTip';
 import Typography from '@mui/material/Typography';
+import Loader from './Loader';
 
 
 const StartGame = ({newGame, updateGameMode, gameMode}) => {
   const [checked, setChecked] = useState(false);
   const [imageSelected, setImageSelected] = useState('mapOne');
+  const [loading, setLoading] = useState(true);
 
   const handleChange = (event) => {
     setChecked(event.target.checked);
@@ -50,12 +52,15 @@ const StartGame = ({newGame, updateGameMode, gameMode}) => {
       <Typography variant="body1" gutterBottom>
         Select your map:
       </Typography>
+      <Loader style={{display: loading ? "block" : "none"}} /> 
       <img 
         className={imageSelected === 'mapOne' ? 'preview-image image-selected' : 'preview-image' }
         src={`${process.env.PUBLIC_URL}/assets/mapOnePreview.png` }
         alt="a huge panorama containing lots of different characters"
         name="mapOne"
         onClick={(event) => handleImageSelect(event)}
+        onLoad={() => setLoading(false)}
+        style={{display: loading ? "none" : "block"}}
       />
       </div>
       <Typography variant="body1" gutterBottom>

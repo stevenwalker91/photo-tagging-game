@@ -1,6 +1,9 @@
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import { useState } from 'react';
+import Loader from './Loader';
 
 const Character = ({character}) => {
+  const [loading, setLoading] = useState(true);
 
   const getBackgroundColor = () => {
     let color = '';
@@ -42,12 +45,15 @@ const Character = ({character}) => {
 
   return (
     <div className="character-container">
+      <Loader style={{display: loading ? "block" : "none"}} /> 
       <img 
         className={className('img')} 
         alt={character.name} 
         src={`${process.env.PUBLIC_URL}/assets/${character.file}`} 
         title={character.name}
         draggable={false}
+        style={{display: loading ? "none" : "block"}}
+        onLoad={() => setLoading(false)}
       />
       <span className={className('span')} style={{backgroundColor: getBackgroundColor()}}>{character.difficulty}</span>
       {character.isFound && <span className="check-circle"><CheckCircleIcon /></span>}

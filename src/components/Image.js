@@ -4,10 +4,12 @@ import IconButton from '@mui/material/IconButton';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import StopCircleIcon from '@mui/icons-material/StopCircle';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import Loader from './Loader';
 
 
 const Image = ({admin, checkClickSuccess, characters, endGame, gameMode}) => {
   const [areas, setAreas] = useState([])
+  const [loading, setLoading] = useState(true);
 
 
   const handleClick = (event) => {
@@ -58,11 +60,13 @@ const handleDrag = (event) => {
       onMouseUp={(event) => handleDrag(event)}
     >
       <span className='credit'>Big thanks to <a href="https://www.instagram.com/chekavo/?hl=en" target="_blank" rel="noreferrer">Egor Klyuchnyk</a> for letting me use his awesome art work.</span>
-  
+      <Loader style={{display: loading ? "block" : "none"}} /> 
       <img 
         className="game-image" 
         src={`${process.env.PUBLIC_URL}/assets/background-img.jpg` }
         alt="a huge panorama containing lots of different characters"
+        style={{display: loading ? "none" : "block"}}
+        onLoad={() => setLoading(false)}
       />
       {characters.map((char) => {
         if (char.isFound) {
