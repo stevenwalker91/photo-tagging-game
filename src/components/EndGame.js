@@ -5,12 +5,12 @@ import {collection, query, orderBy, limit, getDocs} from 'firebase/firestore'
 import { v4 as uuidv4 } from 'uuid';
 import ToolTip from './ToolTip';
 
-const EndGame = ({newGame, scores, highscoreSubmitted, handleHighScoreSubmitted, displayOptionsModal}) => {
+const EndGame = ({newGame, scores, highscoreSubmitted, handleHighScoreSubmitted, displayOptionsModal, selectedMap}) => {
   const [highScores, setHighscores] = useState([]);
   const [highScore, setHighScore] = useState(false);
 
   const getHighScores = async () => {
-    const leaderboard = collection(db, 'leaderboard')
+    const leaderboard = collection(db, `${selectedMap}Leaderboard`)
     const q = query(leaderboard, orderBy('score', 'desc'), limit(10));
     const queryResults = await getDocs(q);
     let results = [];
@@ -23,15 +23,14 @@ const EndGame = ({newGame, scores, highscoreSubmitted, handleHighScoreSubmitted,
   }
 
   useEffect(() => {
+
     getHighScores().then((results) => {
       if ((results.length > 0 && results[results.length-1].score < scores.score) || results.length < 10) {
         setHighScore(true)
       }
     })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [highscoreSubmitted, scores])
-
-
-  
 
   return (
 
@@ -81,7 +80,7 @@ const EndGame = ({newGame, scores, highscoreSubmitted, handleHighScoreSubmitted,
             </tbody>
             }
           </table>
-          {highScore && !highscoreSubmitted && <LeaderboardSubmission score={scores} highscoreSubmitted={handleHighScoreSubmitted} updateHighScores={getHighScores}/>}
+          {highScore && !highscoreSubmitted && <LeaderboardSubmission score={scores} highscoreSubmitted={handleHighScoreSubmitted} updateHighScores={getHighScores} selectedMap={selectedMap}/>}
         </div>
         <div style={{alignSelf: 'flex-end', marginTop: '30px'}}>
         <button className="optionsBtn" onClick={displayOptionsModal}>Options</button>

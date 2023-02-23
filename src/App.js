@@ -163,6 +163,7 @@ function App() {
         displayOptionsModal={displayOptionsModal}
         gameMode={gameMode}
         updateMap={updateMap}
+        selectedMap={mapToUse}
       />
       <ToastContainer
         position="top-right"
