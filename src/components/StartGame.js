@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 import PreviewImage from './PreviewImage';
 
 
-const StartGame = ({newGame, updateGameMode, gameMode, updateMap}) => {
+const StartGame = ({newGame, updateGameMode, gameMode, updateMap, selectedMap}) => {
   const [checked, setChecked] = useState(false);
   const [imageSelected, setImageSelected] = useState('mapOne');
 
@@ -36,6 +36,10 @@ const StartGame = ({newGame, updateGameMode, gameMode, updateMap}) => {
     setImageSelected(event.target.name);
     updateMap(event.target.name)
   }
+
+  useEffect(() => {
+    setImageSelected(selectedMap)
+  }, [selectedMap])
 
   return (
     <div className="modal-container">

@@ -48,6 +48,7 @@ const Mod = ({modalType, isOpen, newGame, scores, highscoreSubmitted, handleHigh
         updateGameMode={updateGameMode}
         gameMode={gameMode}
         updateMap={updateMap}
+        selectedMap={selectedMap}
       />
     }
     </Modal>
