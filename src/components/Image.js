@@ -60,6 +60,8 @@ const handleDrag = (event) => {
     >
       <span className='credit'>Big thanks to <a href="https://www.instagram.com/chekavo/?hl=en" target="_blank" rel="noreferrer">Egor Klyuchnyk</a> for letting me use his awesome art work.</span>
       <Loader style={{display: loading ? "block" : "none"}} /> 
+      <TransformWrapper wheel={{wheelDisabled: true}} doubleClick={{disabled: true}} panning={{disabled: true}}>
+         <TransformComponent>
       <img 
         className="game-image" 
         src={`${process.env.PUBLIC_URL}/assets/${mapToUse}.jpeg` }
@@ -85,8 +87,8 @@ const handleDrag = (event) => {
         } else {
           return '';
         }
-
       })}
+      </TransformComponent></TransformWrapper>
       <span 
         className="endGameBtn"
       >
