@@ -4,12 +4,15 @@ import { useState, useEffect } from 'react';
 import ToolTip from './ToolTip';
 import Typography from '@mui/material/Typography';
 import Loader from './Loader';
+import { v4 as uuidv4 } from 'uuid';
 
 
 const StartGame = ({newGame, updateGameMode, gameMode}) => {
   const [checked, setChecked] = useState(false);
   const [imageSelected, setImageSelected] = useState('mapOne');
   const [loading, setLoading] = useState(true);
+
+  const maps = [{name: 'mapOne', url: '/assets/mapOnePreview.png'}, {name: 'mapTwo', url: '/assets/mapTwoPreview.png'}]
 
   const handleChange = (event) => {
     setChecked(event.target.checked);
@@ -52,16 +55,25 @@ const StartGame = ({newGame, updateGameMode, gameMode}) => {
       <Typography variant="body1" gutterBottom>
         Select your map:
       </Typography>
-      <Loader style={{display: loading ? "block" : "none"}} /> 
-      <img 
-        className={imageSelected === 'mapOne' ? 'preview-image image-selected' : 'preview-image' }
-        src={`${process.env.PUBLIC_URL}/assets/mapOnePreview.png` }
-        alt="a huge panorama containing lots of different characters"
-        name="mapOne"
-        onClick={(event) => handleImageSelect(event)}
-        onLoad={() => setLoading(false)}
-        style={{display: loading ? "none" : "block"}}
-      />
+        <div className="previews-container">
+        {maps.map((item) => {
+          return (
+            <div className="preview-image-container" key={uuidv4()}>
+              <Loader style={{display: loading ? "block" : "none"}} /> 
+              <img 
+                className={imageSelected === item.name ? 'preview-image image-selected' : 'preview-image' }
+                src={`${process.env.PUBLIC_URL}${item.url}` }
+                alt="a huge panorama containing lots of different characters"
+                name={item.name}
+                onClick={(event) => handleImageSelect(event)}
+                onLoad={() => setLoading(false)}
+                style={{display: loading ? "none" : "block"}}
+              />
+            </div>
+          )
+        })}
+        </div>
+
       </div>
       <Typography variant="body1" gutterBottom>
         How to play?

@@ -21,7 +21,6 @@ const Mod = ({modalType, isOpen, newGame, scores, highscoreSubmitted, handleHigh
       borderColor: 'black',
       color: 'white',
       justifyContent: 'space-evenly',
-      height: 'fit-content',
       maxWidth: '800px',
       marginLeft: 'auto',
       marginRight: 'auto'

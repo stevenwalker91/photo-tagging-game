@@ -174,8 +174,7 @@ h3 {
 }
 
 .preview-image {
-  max-width: 100%;
-
+  max-width: 80%;
 }
 
 .image-selected {
@@ -204,4 +203,16 @@ h3 {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.previews-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.preview-image-container {
+  display: flex;
+  justify-content: center;
+
 }
