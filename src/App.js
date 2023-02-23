@@ -178,7 +178,7 @@ function App() {
         theme="dark"
       />
       <Carousel characters={characters} gameMode={gameMode} />
-      <Image characters={characters} admin={true} checkClickSuccess={checkClickSuccess} endGame={endGame} gameMode={gameMode} mapToUse={mapToUse}/>
+      <Image characters={characters} admin={false} checkClickSuccess={checkClickSuccess} endGame={endGame} gameMode={gameMode} mapToUse={mapToUse}/>
   
     </div>
 
