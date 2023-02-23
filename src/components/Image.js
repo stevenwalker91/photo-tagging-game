@@ -5,6 +5,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import StopCircleIcon from '@mui/icons-material/StopCircle';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Loader from './Loader';
+import {isMobile} from 'react-device-detect';
 
 
 const Image = ({admin, checkClickSuccess, characters, endGame, mapToUse}) => {
@@ -12,6 +13,7 @@ const Image = ({admin, checkClickSuccess, characters, endGame, mapToUse}) => {
   const [loading, setLoading] = useState(true);
 
   const handleClick = (event) => {
+    console.log(event.target)
     const imageWidth = event.target.offsetWidth;
     const xClickWithinImage = event.nativeEvent.offsetX;
     const imageHeight = event.target.offsetHeight
@@ -60,7 +62,7 @@ const handleDrag = (event) => {
     >
       <span className='credit'>Big thanks to <a href="https://www.instagram.com/chekavo/?hl=en" target="_blank" rel="noreferrer">Egor Klyuchnyk</a> for letting me use his awesome art work.</span>
       <Loader style={{display: loading ? "block" : "none"}} /> 
-      <TransformWrapper wheel={{wheelDisabled: true}} doubleClick={{disabled: true}} panning={{disabled: true}}>
+      <TransformWrapper wheel={{wheelDisabled: true}} doubleClick={{disabled: true}} panning={{disabled: isMobile ? false : true}}>
          <TransformComponent>
       <img 
         className="game-image" 
