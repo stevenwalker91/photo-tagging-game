@@ -20,7 +20,6 @@ const Mod = ({modalType, isOpen, newGame, scores, highscoreSubmitted, handleHigh
       backgroundColor: '#202124',
       borderColor: 'black',
       color: 'white',
-      justifyContent: 'space-evenly',
       maxWidth: '800px',
       marginLeft: 'auto',
       marginRight: 'auto'

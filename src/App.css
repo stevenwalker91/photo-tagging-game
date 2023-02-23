@@ -34,6 +34,7 @@ body {
 
 .centered {
   justify-content: center;
+  padding-left: 0px;
 }
 
 .option-image {
@@ -214,5 +215,10 @@ h3 {
 .preview-image-container {
   display: flex;
   justify-content: center;
+}
 
+@media (max-width: 385px) {
+  form {
+    flex-direction: column;
+  }
 }
