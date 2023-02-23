@@ -1,70 +1,19 @@
-# Getting Started with Create React App
+# Photo Tagging Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Summary
 
-## Available Scripts
+Another project as part of [The Odin Project curriculum](https://stevenwalker91.github.io/photo-tagging-game/). The objective was to make a _Where's Waldo_ style game where users can search through an image and click to identify characters. 
 
-In the project directory, you can run:
+The scope suggested a timer system, but I settled on a points-based scoring system instead, deducting points for wrong clicks and giving additional points dependent on the difficulty to find a given character.
 
-### `npm start`
+This was my first project using Backend as a Service (BaaS) where I implemented a basic _Firestore_ database using _Firebase_.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This project properly let me flex some of my React learnings so far and I tried to set it up in a fairly scalable way, where new maps can be added without too much effort. I'd love to build on this in future to add full backend capability where admin users can add their own images and define the 'clickable' characters.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Credit
 
-### `npm test`
+A massive thanks to Egor Klyuchnyk who let me use his amazing art work for the project. He was very encouraging and has even expressed an interest in using the game for his personal site. You can see more of the fantastic work he's doing over on [Instagram](https://www.instagram.com/chekavo/?hl=en).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Interested?
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Take a look at the [demo](https://stevenwalker91.github.io/photo-tagging-game/)
