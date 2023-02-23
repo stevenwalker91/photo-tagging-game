@@ -5,6 +5,7 @@ import ToolTip from './ToolTip';
 import Typography from '@mui/material/Typography';
 import Loader from './Loader';
 import { v4 as uuidv4 } from 'uuid';
+import PreviewImage from './PreviewImage';
 
 
 const StartGame = ({newGame, updateGameMode, gameMode, updateMap}) => {
@@ -59,18 +60,12 @@ const StartGame = ({newGame, updateGameMode, gameMode, updateMap}) => {
         <div className="previews-container">
         {maps.map((item) => {
           return (
-            <div className="preview-image-container" key={uuidv4()}>
-              <Loader style={{display: loading ? "block" : "none"}} /> 
-              <img 
-                className={imageSelected === item.name ? 'preview-image image-selected' : 'preview-image' }
-                src={`${process.env.PUBLIC_URL}${item.url}` }
-                alt="a huge panorama containing lots of different characters"
-                name={item.name}
-                onClick={(event) => handleImageSelect(event)}
-                onLoad={() => setLoading(false)}
-                style={{display: loading ? "none" : "block"}}
-              />
-            </div>
+          <PreviewImage 
+            imageSelected={imageSelected} 
+            item={item} 
+            handleImageSelect={handleImageSelect}
+            key={uuidv4()}
+          />
           )
         })}
         </div>
