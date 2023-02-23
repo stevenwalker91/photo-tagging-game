@@ -8,5 +8,145 @@
     "file": "patrick.png",
     "difficulty": "Easy",
     "isFound": false
+  },
+  {
+    "upperLeftX": 81.85654008438819,
+    "upperLeftY": 51.338582677165356,
+    "lowerRightX": 86.33966244725738,
+    "lowerRightY": 54.59317585301837,
+    "name": "Sonic",
+    "file": "sonic.png",
+    "difficulty": "Very Hard",
+    "isFound": false
+  },
+  {
+    "upperLeftX": 3.5864978902953584,
+    "upperLeftY": 9.68503937007874,
+    "lowerRightX": 8.649789029535865,
+    "lowerRightY": 12.650918635170605,
+    "name": "Fry",
+    "file": "fry.png",
+    "difficulty": "Medium",
+    "isFound": false
+  },
+  {
+    "upperLeftX": 38.39662447257383,
+    "upperLeftY": 50.91863517060368,
+    "lowerRightX": 43.67088607594937,
+    "lowerRightY": 53.62204724409448,
+    "name": "Roger",
+    "file": "roger.png",
+    "difficulty": "Medium",
+    "isFound": false
+  },
+  {
+    "upperLeftX": 91.5084388185654,
+    "upperLeftY": 91.88976377952756,
+    "lowerRightX": 96.30801687763713,
+    "lowerRightY": 97.53280839895014,
+    "name": "Deadpool",
+    "file": "deadpool.png",
+    "difficulty": "Medium",
+    "isFound": false
+  },
+  {
+    "upperLeftX": 35.073839662447256,
+    "upperLeftY": 87.58530183727035,
+    "lowerRightX": 39.345991561181435,
+    "lowerRightY": 93.49081364829395,
+    "name": "Austin Powers",
+    "file": "austin.png",
+    "difficulty": "Easy",
+    "isFound": false
+  },
+  {
+    "upperLeftX": 42.29957805907173,
+    "upperLeftY": 67.06036745406824,
+    "lowerRightX": 48.10126582278481,
+    "lowerRightY": 72.33595800524935,
+    "name": "Tin Tin",
+    "file": "tintin.webp",
+    "difficulty": "Very Easy",
+    "isFound": false
+  },
+  {
+    "upperLeftX": 50.4746835443038,
+    "upperLeftY": 10.99737532808399,
+    "lowerRightX": 56.0126582278481,
+    "lowerRightY": 15.118110236220472,
+    "name": "Trevor Phillips (GTA V)",
+    "file": "trevor.webp",
+    "difficulty": "Medium",
+    "isFound": false
+  },
+  {
+    "upperLeftX": 26.635021097046412,
+    "upperLeftY": 8.635170603674542,
+    "lowerRightX": 32.278481012658226,
+    "lowerRightY": 12.755905511811024,
+    "name": "Carl Johnson (GTA San Andreas)",
+    "file": "carl.png",
+    "difficulty": "Easy",
+    "isFound": false
+  },
+  {
+    "upperLeftX": 80.69620253164557,
+    "upperLeftY": 29.606299212598426,
+    "lowerRightX": 86.5506329113924,
+    "lowerRightY": 33.25459317585302,
+    "name": "Aang (The Last Airbender)",
+    "file": "aang.webp",
+    "difficulty": "Easy",
+    "isFound": false
+  },
+  {
+    "upperLeftX": 93.9873417721519,
+    "upperLeftY": 53.202099737532805,
+    "lowerRightX": 99.20886075949366,
+    "lowerRightY": 59.10761154855643,
+    "name": "Ghostface (Scream)",
+    "file": "ghostface.webp",
+    "difficulty": "Very Easy",
+    "isFound": false
+  },
+  {
+    "upperLeftX": 13.291139240506327,
+    "upperLeftY": 48.74015748031496,
+    "lowerRightX": 20.411392405063292,
+    "lowerRightY": 56.45669291338583,
+    "name": "Sauron (Lord of the Rings)",
+    "file": "sauron.png",
+    "difficulty": "Medium",
+    "isFound": false
+  },
+  {
+    "upperLeftX": 0.5274261603375527,
+    "upperLeftY": 39.42257217847769,
+    "lowerRightX": 10.654008438818567,
+    "lowerRightY": 45.59055118110236,
+    "name": "Popeye",
+    "file": "popeye.png",
+    "difficulty": "Easy",
+    "isFound": false
+  },
+  {
+    "upperLeftX": 38.23839662447258,
+    "upperLeftY": 15.721784776902886,
+    "lowerRightX": 46.94092827004219,
+    "lowerRightY": 20.813648293963254,
+    "name": "Moe Szyslak",
+    "file": "moe.png",
+    "difficulty": "Easy",
+    "isFound": false
+  },
+  {
+    "upperLeftX": 35.0210970464135,
+    "upperLeftY": 71.5485564304462,
+    "lowerRightX": 42.19409282700422,
+    "lowerRightY": 75.06561679790026,
+    "name": "Gollum",
+    "file": "gollum.webp",
+    "difficulty": "Hard",
+    "isFound": false
   }
 ]
